@@ -1,11 +1,12 @@
 import {products} from "../../../json/weuller.json"
-
-const Home = () => {
+import BgfComponent from "../../components/Home/FirstComponent/BgfComponent"
+import '@splidejs/react-splide/css';
  
+
+const Dados = () =>{
   return (
-    <div className="container max-w-[1200px] mx-auto">
-      <h1>home</h1>
-      {products.slice(0,20).map((prod)=>(
+    <div>
+      {products.map((prod)=>(
         <div key={prod.id}>
            {/* <h1>{prod.title}</h1>
            <p>{prod.description?.long}</p> */}
@@ -18,12 +19,26 @@ const Home = () => {
            <div>
              <div className="flex flex-wrap gap-2" >
             {prod.colors.map((cor)=>(
-                <div key={1} className={'p-3 rounded-full w-4'} style={{background:`${cor.hex}`}}></div>
+                <div key={cor.name} className={'p-3 rounded-full w-4'} style={{background:`${cor.hex}`}}></div>
             ))}
             </div>
            </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+const Home = () => {
+ 
+  return (
+    <div className="">
+      {/* <Dados/> */}
+      <div className="firstCard max-w-screen-2xl mx-auto" >
+      <BgfComponent/>
+    {/* <Dados/> */}
+      </div>
+
     </div>
   )
 }

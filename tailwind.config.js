@@ -21,6 +21,9 @@ export default {
         "cor-FFC700": "#FFC700",
       },
     },
+    backgroundImage:{
+      "first-component":"url('./src/assets/Img/imgBgHome.jpeg')"
+    }
   },
   plugins: [],
 };
