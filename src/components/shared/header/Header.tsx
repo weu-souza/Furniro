@@ -5,7 +5,7 @@ import LogoIcon from '../../../assets/icons/LogoIcon'
 
 const Header = () => {
   return (
-    <header className='flex flex-wrap justify-between py-7 max-w-[1440px] mx-auto items-center'>
+    <header className='flex flex-wrap justify-between py-7 max-w-screen-xl mx-auto items-center'>
       <div>
         <LogoIcon/>
       </div>
