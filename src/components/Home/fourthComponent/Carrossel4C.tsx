@@ -87,7 +87,7 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
     type: 'slide',
     direction: 'ltr',
     rewind: true,
-    width: '1000px',
+    width: '800px',
     rewindByDrag: false,
     arrows: true,
     pagination: true,

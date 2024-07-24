@@ -13,7 +13,7 @@ const Container4Component = () => {
     prod();
   }, []);
   return (
-    <div className="flex flex-wrap gap-10 justify-between">
+    <div className="flex flex-wrap gap-10 max-w-screen-xl justify-between mx-auto">
       <div className="flex flex-col gap-4 self-center w-[422px]">
         <h2 className="font-Poppins font-bold text-4xl text-cor-3A3A3A">
           50+ Beautiful rooms inspiration
