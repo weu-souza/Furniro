@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between md:w-[352px] w-full">
+        <div className="flex md:justify-between md:w-[352px] w-full">
           <div className="flex flex-col gap-[50px]">
             <h3 className="font-Poppins font-normal text-base text-cor-9F9F9F">
               Links

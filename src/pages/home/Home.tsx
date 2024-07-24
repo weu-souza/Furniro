@@ -1,6 +1,8 @@
 import {products} from "../../../json/weuller.json"
-import BgfComponent from "../../components/Home/FirstComponent/BgfComponent"
+import ContainerFComponent from "../../components/Home/FirstComponent/ContainerFComponent"
 import '@splidejs/react-splide/css';
+import ContainerSComponent from "../../components/Home/secondComponent/ContainerSComponent";
+import ContainerTComponent from "../../components/Home/thirdComponent/ContainerTComponent";
  
 
 const Dados = () =>{
@@ -33,10 +35,10 @@ const Home = () => {
  
   return (
     <div className="">
-      {/* <Dados/> */}
-      <div className="firstCard max-w-screen-2xl mx-auto" >
-      <BgfComponent/>
-    {/* <Dados/> */}
+      <div className="max-w-screen-2xl mx-auto flex flex-col md:gap-14" >
+      <ContainerFComponent />
+      <ContainerSComponent />
+      <ContainerTComponent /> 
       </div>
 
     </div>

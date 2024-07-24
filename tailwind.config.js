@@ -19,6 +19,9 @@ export default {
         "cor-D9D9D9": "#D9D9D9",
         "cor-F9F1E7": "#F9F1E7",
         "cor-FFC700": "#FFC700",
+        "cor-E97171":"#E97171",
+        "cor-2EC1AC":"#2EC1AC",
+        "cor-F4F5F7":"#F4F5F7"
       },
     },
     backgroundImage:{
