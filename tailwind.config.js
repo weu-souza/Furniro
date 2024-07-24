@@ -21,7 +21,8 @@ export default {
         "cor-FFC700": "#FFC700",
         "cor-E97171":"#E97171",
         "cor-2EC1AC":"#2EC1AC",
-        "cor-F4F5F7":"#F4F5F7"
+        "cor-F4F5F7":"#F4F5F7",
+        "cor-E89F71":"#E89F71"
       },
     },
     backgroundImage:{
