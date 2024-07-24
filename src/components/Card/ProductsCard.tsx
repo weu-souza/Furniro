@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IProducts } from "../../api/ProductsModel";
 import Compare from "../../assets/icons/cardIcons/Compare";
 import Like from "../../assets/icons/cardIcons/Like";
@@ -15,8 +15,10 @@ type cardsType = {
 
 const Cards = ({ products }: cardsType) => {
     const [hover,setHover] = useState<boolean>(false);
-    const MouseEnter = () =>{
-       setHover(true)
+    const MouseEnter = (e:React.MouseEvent) =>{
+      if(e){
+        setHover(true)
+      }
     }
 
     const mouseDown = () =>{
@@ -27,8 +29,8 @@ const Cards = ({ products }: cardsType) => {
     
   return (
     <div onMouseEnter={MouseEnter} onMouseLeave={mouseDown}>
-            {hover?( <div className="relative flex-auto w-72 flex bg-cor-3A3A3A flex-col gap-4 p-2 rounded-md shadow-lg">
-          <div className="absolute inset-0 bg-black opacity-30 rounded-md"></div>
+            {hover?( <div className="relative flex-auto w-72 flex  bg-black bg-opacity-70 flex-col gap-4 p-2 rounded-md shadow-lg">
+          <div className="absolute inset-0  opacity-30 rounded-md"></div>
           <div className="w-full relative z-10">
             <div className="absolute top-32 left-6 flex flex-col mx-auto z-20">
               <button className="font-Poppins font-semibold text-base text-cor-E89F71 py-3 px-14 bg-white">
@@ -92,7 +94,7 @@ const Cards = ({ products }: cardsType) => {
         font-Poppins font-medium text-base
          text-white"
               >
-                -{products.discountPercentage * 100}%
+                -{(products.discountPercentage * 100).toFixed(0)}%
               </p>
             </div>
           )}
@@ -132,7 +134,7 @@ const Cards = ({ products }: cardsType) => {
 const ProductsCard = ({ products, range }: productsCardType) => {
     
   return (
-    <div  className="flex flex-row flex-wrap gap-8 max-w-screen-xl">
+    <div  className="flex flex-row flex-wrap gap-8 max-w-screen-xl justify-center">
       {products.slice(0, range).map((prod) => (
         <Cards products={prod} key={prod.id} />
       ))}

@@ -1,44 +1,21 @@
-import {products} from "../../../json/weuller.json"
+
 import ContainerFComponent from "../../components/Home/FirstComponent/ContainerFComponent"
-import '@splidejs/react-splide/css';
 import ContainerSComponent from "../../components/Home/secondComponent/ContainerSComponent";
 import ContainerTComponent from "../../components/Home/thirdComponent/ContainerTComponent";
- 
+import Container4Component from "../../components/Home/fourthComponent/Container4Component";
+import ShareYourSetup from "../../components/Home/fifthComponent/ShareYourSetup";
 
-const Dados = () =>{
-  return (
-    <div>
-      {products.map((prod)=>(
-        <div key={prod.id}>
-           {/* <h1>{prod.title}</h1>
-           <p>{prod.description?.long}</p> */}
-           <img src={prod.images?.mainImage} width={500} alt="" /> 
-           <div className="flex flex-wrap mx-auto mb-10">
-            {prod.images?.gallery.map((img)=>(
-                <img key={img} src={img} width={200} alt="" /> 
-            ))}
-           </div>
-           <div>
-             <div className="flex flex-wrap gap-2" >
-            {prod.colors.map((cor)=>(
-                <div key={cor.name} className={'p-3 rounded-full w-4'} style={{background:`${cor.hex}`}}></div>
-            ))}
-            </div>
-           </div>
-        </div>
-      ))}
-    </div>
-  )
-}
 
 const Home = () => {
  
   return (
     <div className="">
-      <div className="max-w-screen-2xl mx-auto flex flex-col md:gap-14" >
+      <div className="max-w-screen-2xl mx-auto flex flex-col gap-14" >
       <ContainerFComponent />
       <ContainerSComponent />
       <ContainerTComponent /> 
+      <Container4Component/>
+      <ShareYourSetup />
       </div>
 
     </div>

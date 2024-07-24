@@ -1,5 +1,3 @@
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-
 interface Product {
   id: string;
   category: string;
@@ -24,47 +22,28 @@ const getUniqueProductsByCategory = (products: Product[]) => {
   });
 };
 
-const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
+const ProductSlider = ({ products }:ProductSliderProps) => {
   const uniqueProducts = getUniqueProductsByCategory(products);
 
   return (
-    <Splide
-      tag="section"
-      options={{
-        type: "slide",
-        direction: "ltr",
-        rewind: true,
-        width: "1180px",
-        rewindByDrag: true,
-        arrows: false,
-        pagination: false,
-        // autoplay: true,
-        gap: "20px",
-        perPage: 3,
-        breakpoints: {
-          550:{width: "350px", perPage: 1 },
-          768: { width: "500px", perPage: 1},
-          1024: { width: "900px", perPage: 2 },
-          1440: { width: "1180px", perPage: 3 },
-        },
-      }}
-    >
-      {uniqueProducts.map((prod) => (
-        <SplideSlide key={prod.id}>
-          <div>
-            <img
-              src={prod.images.mainImage}
-              className=" max-w-[381px] object-cover h-[480px] rounded-sm mx-auto"
-              alt={prod.category}
-            />
-            <h1 className="font-Poppins font-semibold text-2xl text-center text-cor-333333 pt-11">
-              {prod.category}
-            </h1>
-          </div>
-        </SplideSlide>
-      ))}
-    </Splide>
+    <div className="flex gap-5 flex-wrap">
+    {uniqueProducts.slice(0,3).map((prod) => (
+      
+        <div key={prod.id}>
+          <img
+            src={prod.images.mainImage}
+            className=" md:max-w-[381px] object-cover h-[480px] rounded-sm mx-auto"
+            alt={prod.category}
+          />
+          <h1 className="font-Poppins font-semibold text-2xl text-center text-cor-333333 pt-11">
+            {prod.category}
+          </h1>
+        
+      </div>
+    ))}
+    </div>
   );
+
 };
 
 export default ProductSlider;
