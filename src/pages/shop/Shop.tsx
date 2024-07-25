@@ -20,8 +20,10 @@ const Shop = () => {
   }, []);
   return (
     <div className="flex flex-col gap-10 max-w-screen-xl mx-auto">
+      <div>
       <Heading />
       <Filter />
+      </div>
       <div>
         <ProductsCard products={products} range={8}/>
       <Paginator/>
