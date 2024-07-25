@@ -1,16 +1,10 @@
-interface Product {
-  id: string;
-  category: string;
-  images: {
-    mainImage: string;
-  };
-}
+import { IProducts } from "../../../Service/api/model/ProductsModel";
 
 interface ProductSliderProps {
-  products: Product[];
+  products: IProducts[];
 }
 
-const getUniqueProductsByCategory = (products: Product[]) => {
+const getUniqueProductsByCategory = (products: IProducts[]) => {
   const uniqueCategories: { [key: string]: boolean } = {};
 
   return products.filter((prod) => {

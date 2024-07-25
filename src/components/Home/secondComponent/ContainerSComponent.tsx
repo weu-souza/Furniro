@@ -1,20 +1,8 @@
-import { useEffect, useState } from "react"
 import ProductSlider from "./CarrosselS"
-import { IProducts } from "../../../api/ProductsModel"
+import { useAppSelector } from "../../../Service/store/Products/Products.store";
 
 const ContainerSComponent = () => {
-  const [products,setProducts] = useState<IProducts[]>([])
-    useEffect(()=>{
-
-        const prod =  async  () => {
-            const response = await fetch('http://localhost:3000/products')
-            const data = await response.json()
-            setProducts(data)
-            
-        }
-        prod()
-
-    },[])
+  const products = useAppSelector((state) => state.product.products);
   return (
     <div className="flex flex-col gap-12">
       <h1 className="font-Poppins font-bold text-3xl text-cor-333333 text-center">Browse The Range</h1>

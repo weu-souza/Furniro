@@ -1,24 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProductsCard from "../../components/shared/Card/ProductsCard";
 import Filter from "../../components/Shop/Filter/Filter";
 import Footing from "../../components/shared/Footing/Footing";
 import Heading from "../../components/shared/Heading/Heading";
 import Paginator from "../../components/Shop/Paginator/Paginator";
-import { IProducts } from "../../api/ProductsModel";
+import { useAppSelector } from "../../Service/store/Products/Products.store";
 
 const Shop = () => {
-  const [products, setProducts] = useState<IProducts[]>([]);
+  const products = useAppSelector((state) => state.product.products);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
   const [selectedCategory, setSelectedCategory] = useState<string>('default');
-  useEffect(() => {
-    const prod = async () => {
-      const response = await fetch("http://localhost:3000/products");
-      const data = await response.json();
-      setProducts(data);
-    };
-    prod();
-  }, []);
   const filteredProducts = selectedCategory === 'default' ? products : products.filter(product => product.category === selectedCategory);
 
 
@@ -46,7 +38,7 @@ const Shop = () => {
       </div>
       <div>
         <ProductsCard products={currentProducts} />
-        <div className="flex justify-center ">
+        <div className="flex justify-center pt-20">
           <Paginator
             itemsPerPage={itemsPerPage}
             totalItems={filteredProducts.length}

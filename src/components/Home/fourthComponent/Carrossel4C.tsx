@@ -1,5 +1,5 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { IProducts } from "../../../api/ProductsModel";
+import { IProducts } from "../../../Service/api/model/ProductsModel";
 import { useEffect, useRef } from "react";
 import Seta from "../../../assets/icons/carrosselicon/seta";
 type CarrosselType = {

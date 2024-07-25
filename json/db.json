@@ -264,11 +264,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "40 cm",
-          "width": "125 cm",
-          "depth": "32 cm"
-        }
+       "EG","XS","P"
       ],
       "rating": 4.9,
       "images": {
@@ -302,13 +298,7 @@
           "hex": "#FFFFFF"
         }
       ],
-      "sizes": [
-        {
-          "height": "47 cm",
-          "width": "150 cm",
-          "depth": "44 cm"
-        }
-      ],
+      "sizes": ["EG","P","XL"],
       "rating": 0.0,
       "images": {
         "mainImage": "https://static.mobly.com.br/p/DitC3A1lia-Rack-2-Portas-DitC3A1lia-R-606-Branco-5701-6463801-2.jpg",
@@ -1831,11 +1821,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "75 cm",
-          "width": "180 cm",
-          "depth": "60 cm"
-        }
+        "EG","M","S"
       ],
       "rating": 4.9,
       "images": {
@@ -1869,11 +1855,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "75 cm",
-          "width": "150 cm",
-          "depth": "60 cm"
-        }
+       "G","P","XL"
       ],
       "rating": 4.9,
       "images": {
@@ -1907,11 +1889,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "77 cm",
-          "width": "110 cm",
-          "depth": "54 cm"
-        }
+        "EG","M","P"
       ],
       "rating": 5.0,
       "images": {
@@ -1949,11 +1927,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "78 cm",
-          "width": "120 cm",
-          "depth": "60 cm"
-        }
+       "EG","M","S"
       ],
       "rating": 5.0,
       "images": {
@@ -1987,11 +1961,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "88 cm",
-          "width": "110 cm",
-          "depth": "54 cm"
-        }
+       "EG","L","P"
       ],
       "rating": 4.8,
       "images": {
@@ -2029,11 +1999,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "76 cm",
-          "width": "136 cm",
-          "depth": "53 cm"
-        }
+        "EG","M","XS"
       ],
       "rating": 0.0,
       "images": {
@@ -2071,11 +2037,7 @@
         }
       ],
       "sizes": [
-        {
-          "height": "83 cm",
-          "width": "111 cm",
-          "depth": "33 cm"
-        }
+       "EG","G","XS"
       ],
       "rating": 4.9,
       "images": {

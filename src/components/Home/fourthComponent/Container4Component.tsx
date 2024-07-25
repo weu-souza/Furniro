@@ -1,18 +1,8 @@
-import { useEffect, useState } from "react";
 import Carrossel4C from "./Carrossel4C";
-import { IProducts } from "../../../api/ProductsModel";
+import { useAppSelector } from "../../../Service/store/Products/Products.store";
 
 const Container4Component = () => {
-  const [products, setProducts] = useState<IProducts[]>([]);
-  useEffect(() => {
-    const prod = async () => {
-      const response = await fetch("http://localhost:3000/products");
-      const data = await response.json();
-      setProducts(data);
-    };
-    prod();
-  }, []);
-  
+  const products = useAppSelector((state) => state.product.products);
   return (
     <div className="flex flex-wrap gap-10 max-w-screen-xl justify-between mx-auto">
       <div className="flex flex-col gap-4 self-center w-[422px]">

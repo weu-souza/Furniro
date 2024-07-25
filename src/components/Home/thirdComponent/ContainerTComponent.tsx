@@ -1,21 +1,9 @@
 import ProductsCard from "../../shared/Card/ProductsCard"
-import { IProducts } from "../../../api/ProductsModel"
-
 import { Link } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useAppSelector } from "../../../Service/store/Products/Products.store"
 
 const ContainerTComponent = () => {
-  const [products,setProducts] = useState<IProducts[]>([])
-    useEffect(()=>{
-
-        const prod =  async  () => {
-            const response = await fetch('http://localhost:3000/products')
-            const data = await response.json()
-            setProducts(data) 
-        }
-        prod()
-
-    },[])
+  const products = useAppSelector((state) => state.product.products);
   return (
     <div className="flex flex-col gap-8 mx-auto">
       <h3 className="font-Poppins font-bold text-4xl text-center">Our Products</h3>
