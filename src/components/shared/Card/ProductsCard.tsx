@@ -6,7 +6,6 @@ import Share from "../../../assets/icons/cardIcons/Share";
 
 type productsCardType = {
   products: IProducts[];
-  range: number;
 };
 
 type cardsType = {
@@ -131,11 +130,11 @@ const Cards = ({ products }: cardsType) => {
 
 
 
-const ProductsCard = ({ products, range }: productsCardType) => {
+const ProductsCard = ({ products}: productsCardType) => {
     
   return (
     <div  className="flex flex-row flex-wrap gap-8 max-w-screen-xl justify-center">
-      {products.slice(0, range).map((prod) => (
+      {products.map((prod) => (
         <Cards products={prod} key={prod.id} />
       ))}
     </div>

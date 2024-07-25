@@ -1,15 +1,16 @@
-
-import { useEffect, useState } from "react"
-import ProductsCard from "../../components/shared/Card/ProductsCard"
-import Filter from "../../components/shared/Filter/Filter"
-import Footing from "../../components/shared/Footing/Footing"
-import Heading from "../../components/shared/Heading/Heading"
-import Paginator from "../../components/Shop/Paginator/Paginator"
-import { IProducts } from "../../api/ProductsModel"
-
+import { useEffect, useState } from "react";
+import ProductsCard from "../../components/shared/Card/ProductsCard";
+import Filter from "../../components/Shop/Filter/Filter";
+import Footing from "../../components/shared/Footing/Footing";
+import Heading from "../../components/shared/Heading/Heading";
+import Paginator from "../../components/Shop/Paginator/Paginator";
+import { IProducts } from "../../api/ProductsModel";
 
 const Shop = () => {
   const [products, setProducts] = useState<IProducts[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(8);
+  const [selectedCategory, setSelectedCategory] = useState<string>('default');
   useEffect(() => {
     const prod = async () => {
       const response = await fetch("http://localhost:3000/products");
@@ -18,21 +19,46 @@ const Shop = () => {
     };
     prod();
   }, []);
+  const filteredProducts = selectedCategory === 'default' ? products : products.filter(product => product.category === selectedCategory);
+
+
+  const indexOfLastProduct = currentPage * itemsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const nextPage = () =>
+    setCurrentPage((prevPage) =>
+      Math.min(prevPage + 1, Math.ceil(products.length / itemsPerPage))
+    );
+
+    const categories = Array.from(new Set(products.map(product => product.category)));
   return (
     <div className="flex flex-col gap-10 max-w-screen-xl mx-auto">
       <div>
-      <Heading />
-      <Filter />
+        <Heading />
+        <Filter 
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        totalItems={filteredProducts.length} 
+        categories={categories}
+        />
       </div>
       <div>
-        <ProductsCard products={products} range={8}/>
-      <div className="flex justify-center ">
-      <Paginator/>
+        <ProductsCard products={currentProducts} />
+        <div className="flex justify-center ">
+          <Paginator
+            itemsPerPage={itemsPerPage}
+            totalItems={filteredProducts.length}
+            paginate={paginate}
+            currentPage={currentPage}
+            nextPage={nextPage}
+          />
+        </div>
       </div>
-      </div>
-     <Footing />
+      <Footing />
     </div>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;

@@ -6,7 +6,7 @@ import Support from '../../../assets/icons/IconsFooting/Support'
 
 const Footing = () => {
   return (
-    <div className=' bg-cor-F9F1E7 h-[200px] flex flex-row justify-around p-6 gap-5'>
+    <div className=' bg-cor-F9F1E7 md:h-[200px] flex flex-col md:flex-row  flex-wrap justify-around p-6 gap-5'>
       <div className='my-auto flex flex-row gap-4'>
         <TrophyIcon/>
         <div>
