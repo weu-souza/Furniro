@@ -26,7 +26,9 @@ const Shop = () => {
       </div>
       <div>
         <ProductsCard products={products} range={8}/>
+      <div className="flex justify-center ">
       <Paginator/>
+      </div>
       </div>
      <Footing />
     </div>
