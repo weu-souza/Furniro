@@ -7,12 +7,13 @@ type CarrosselType = {
 }
 interface SplideOptions {
   type: 'slide' | 'loop' | 'fade';
-  direction: 'ltr' | 'rtl' | 'ttb' | 'btt';
+  // direction: 'ltr' | 'rtl' | 'ttb' | 'btt';
   rewind: boolean;
   width: string;
-  rewindByDrag: boolean;
+  drag:boolean
   arrows: boolean;
   pagination: boolean;
+  paginationKeyboard:boolean;
   gap: string;
   start: number;
   perPage: number;
@@ -22,14 +23,6 @@ interface SplideOptions {
       width: string;
       perPage: number;
     };
-  };
-}
-
-interface Product {
-  id: string;
-  category: string;
-  images: {
-    mainImage: string;
   };
 }
 
@@ -49,6 +42,7 @@ const getUniqueProductsByCategory = (products: IProducts[]) => {
 const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
   const uniqueProducts = getUniqueProductsByCategory(products);
   const splideRef = useRef<Splide>(null);
+
 
   useEffect(() => {
     const adjustHeight = () => {
@@ -72,27 +66,46 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
           }
         })
       }
+      const hidePrevButton = () => {
+      const prevButton = document.querySelector('.splide__arrow--prev');
+      if (prevButton) {
+        (prevButton as HTMLElement).style.display = 'none';
+      }
     };
 
+    hidePrevButton();    
+    splideInstance?.on('mounted', hidePrevButton);
+    if (splideInstance) {
+      splideInstance.on('mounted', () => {
+        adjustHeight();
+        hidePrevButton();
+      });
+      splideInstance.on('moved', adjustHeight);
+    }
+    };
+    
+
     const splideInstance = splideRef.current?.splide;
-    adjustHeight();
+    adjustHeight()
     splideInstance?.on('moved', adjustHeight);
+    
 
     return () => {
       splideInstance?.off('moved', adjustHeight);
+      splideInstance?.on('mounted', adjustHeight);
     };
   }, []);
 
   const options: SplideOptions = {
     type: 'slide',
-    direction: 'ltr',
     rewind: true,
+    drag:false,
     width: '800px',
-    rewindByDrag: false,
     arrows: true,
     pagination: true,
+    paginationKeyboard:true,
     gap: '20px',
-    start: 1,
+    start:0,
     perPage: 2,
     perMove: 1,
     breakpoints: {
@@ -106,12 +119,12 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
   return (
     <section className="splide">
       <Splide options={options} ref={splideRef}>
-        {uniqueProducts.map((prod) => (
+        {uniqueProducts.map((prod,index) => (
           <SplideSlide key={prod.id}>
             <div className="relative">
               <div className=" ShowFSlide flex absolute bottom-6 left-6">
                 <div className="flex  flex-col gap-2 shadow-md bg-white p-8 ">
-                <h3 className="font-Poppins font-medium text-base text-cor-616161">01 -- {prod.category}</h3>
+                <h3 className="font-Poppins font-medium text-base text-cor-616161">0{index+1} -- {prod.category}</h3>
                 <p className="font-Poppins font-semibold text-3xl text-cor-3A3A3A">Inner Peace</p>
                 </div>
                 <div className="self-end">

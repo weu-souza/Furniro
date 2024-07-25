@@ -1,4 +1,4 @@
-import ProductsCard from "../../Card/ProductsCard"
+import ProductsCard from "../../shared/Card/ProductsCard"
 import { IProducts } from "../../../api/ProductsModel"
 
 import { Link } from "react-router-dom"

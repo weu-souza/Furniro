@@ -12,6 +12,7 @@ const Container4Component = () => {
     };
     prod();
   }, []);
+  
   return (
     <div className="flex flex-wrap gap-10 max-w-screen-xl justify-between mx-auto">
       <div className="flex flex-col gap-4 self-center w-[422px]">

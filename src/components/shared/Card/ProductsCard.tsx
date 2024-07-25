@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { IProducts } from "../../api/ProductsModel";
-import Compare from "../../assets/icons/cardIcons/Compare";
-import Like from "../../assets/icons/cardIcons/Like";
-import Share from "../../assets/icons/cardIcons/Share";
+import { IProducts } from "../../../api/ProductsModel";
+import Compare from "../../../assets/icons/cardIcons/Compare";
+import Like from "../../../assets/icons/cardIcons/Like";
+import Share from "../../../assets/icons/cardIcons/Share";
 
 type productsCardType = {
   products: IProducts[];
