@@ -11,7 +11,7 @@ const Heading = () => {
       
     <div className="w-full h-full flex flex-col justify-center items-center gap-2">
       <div>
-      <img src={img} alt="logo" className="w-28 " />
+      <img src={img} alt="logo" className="w-28 mx-auto" />
       <p className="font-Poppins font-medium text-5xl">{location.pathname.replace('/','')}</p>
       </div>
       <div className="flex items-center">
