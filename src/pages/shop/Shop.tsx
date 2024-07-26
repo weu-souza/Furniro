@@ -4,13 +4,13 @@ import Filter from "../../components/Shop/Filter/Filter";
 import Footing from "../../components/shared/Footing/Footing";
 import Heading from "../../components/shared/Heading/Heading";
 import Paginator from "../../components/Shop/Paginator/Paginator";
-import { useAppSelector } from "../../Service/store/Products/Products.store";
+import { useAppSelector,useAppSelectorCategory,useAppSelectorItem } from "../../Service/store/store";
 
 const Shop = () => {
   const products = useAppSelector((state) => state.product.products);
+  const selectedCategory = useAppSelectorCategory((state) => state.category.category);
+  const itemsPerPage = useAppSelectorItem((state) => state.filter.filter);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(8);
-  const [selectedCategory, setSelectedCategory] = useState<string>('default');
   const filteredProducts = selectedCategory === 'default' ? products : products.filter(product => product.category === selectedCategory);
 
 

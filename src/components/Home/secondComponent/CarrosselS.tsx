@@ -1,4 +1,7 @@
+
+import { useNavigate } from "react-router-dom";
 import { IProducts } from "../../../Service/api/model/ProductsModel";
+import { AddCategory, useAppDispatchCategory } from "../../../Service/store/store";
 
 interface ProductSliderProps {
   products: IProducts[];
@@ -6,6 +9,7 @@ interface ProductSliderProps {
 
 const getUniqueProductsByCategory = (products: IProducts[]) => {
   const uniqueCategories: { [key: string]: boolean } = {};
+  
 
   return products.filter((prod) => {
     if (!uniqueCategories[prod.category]) {
@@ -16,8 +20,18 @@ const getUniqueProductsByCategory = (products: IProducts[]) => {
   });
 };
 
+
 const ProductSlider = ({ products }:ProductSliderProps) => {
   const uniqueProducts = getUniqueProductsByCategory(products);
+  const redirect = useNavigate()
+  const dispatch = useAppDispatchCategory();
+
+  const handleRedirect = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+    const {textContent} = e.target as HTMLButtonElement
+    console.log(textContent)
+    dispatch(AddCategory(String(textContent)))
+    redirect('/shop')
+  }
 
   return (
     <div className="flex gap-5 flex-wrap">
@@ -29,9 +43,11 @@ const ProductSlider = ({ products }:ProductSliderProps) => {
             className=" md:max-w-[381px] object-cover h-[480px] rounded-sm mx-auto"
             alt={prod.category}
           />
-          <h1 className="font-Poppins font-semibold text-2xl text-center text-cor-333333 pt-11">
+          <div className="flex justify-center">
+          <button onClick={handleRedirect} className="font-Poppins font-semibold text-2xl  text-cor-333333 pt-11">
             {prod.category}
-          </h1>
+          </button>
+          </div>
         
       </div>
     ))}

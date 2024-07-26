@@ -1,6 +1,8 @@
 import FilterIcon from "../../../assets/icons/shop/FilterIcon";
 import CiGridBigRound from "../../../assets/icons/shop/CiGridBigRound";
 import ViewList from "../../../assets/icons/shop/ViewList";
+import { useEffect, useState } from "react";
+import { AddItem, useAppDispatchItems,AddCategory, useAppDispatchCategory } from "../../../Service/store/store";
 interface ItemListProps {
   currentPage: number;
   itemsPerPage: number;
@@ -12,6 +14,19 @@ const Filter = ({ currentPage, itemsPerPage, totalItems,categories }: ItemListPr
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const displayedFrom = indexOfFirstItem + 1;
   const displayedTo = Math.min(indexOfLastItem, totalItems);
+const [category,setCategory] = useState<string>('default')
+const [itemsP,setItemsP] = useState<number>(8)
+const dispatch = useAppDispatchCategory();
+const dispatchProd = useAppDispatchItems();
+const handleChangeCategory = (e: React.ChangeEvent<HTMLSelectElement>)=>{
+  setCategory(e.target.value)
+  dispatch(AddCategory(e.target.value));
+  
+}
+const handleChangeItens = (e: React.ChangeEvent<HTMLSelectElement>)=>{
+  setItemsP(Number(e.target.value))
+  dispatchProd(AddItem(Number(e.target.value)))
+}
   
 
   return (
@@ -30,15 +45,17 @@ const Filter = ({ currentPage, itemsPerPage, totalItems,categories }: ItemListPr
         <select
           name=""
           id="show"
+          value={itemsP}
+          onChange={(e) => handleChangeItens(e)}
           className="font-Poppins font-normal text-xl text-cor-9F9F9F my-auto outline-none w-10 p-2 "
         >
-          <option value="">8</option>
-          <option value="">16</option>
-          <option value="">32</option>
+          <option value="8">8</option>
+          <option value="16">16</option>
+          <option value="32">32</option>
         </select>
-        <label htmlFor="category" className="font-Poppins font-normal text-xl text-black">short by</label>
-        <select name="" id="category" className="font-Poppins font-normal text-xl text-cor-9F9F9F my-auto outline-none  p-2">
-          <option value="default">default</option>
+        <label htmlFor="category"  className="font-Poppins font-normal text-xl text-black">short by</label>
+        <select name="" id="category" onChange={(e) => handleChangeCategory(e)} value={category} className="font-Poppins font-normal text-xl text-cor-9F9F9F my-auto outline-none  p-2">
+          <option value="default">Default</option>
           {categories.map((category, index) => (
             <option key={index} value={category}>{category}</option>
           ))}

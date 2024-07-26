@@ -1,6 +1,6 @@
 import ProductsCard from "../../shared/Card/ProductsCard"
 import { Link } from "react-router-dom"
-import { useAppSelector } from "../../../Service/store/Products/Products.store"
+import { useAppSelector } from "../../../Service/store/store"
 
 const ContainerTComponent = () => {
   const products = useAppSelector((state) => state.product.products);

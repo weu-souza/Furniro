@@ -3,7 +3,7 @@ import Header from "./components/shared/header/Header";
 import Footer from "./components/shared/footer/Footer";
 import '@splidejs/react-splide/css';
 
-import { getProducts, useAppDispatch } from "./Service/store/Products/Products.store";
+import { getProducts, useAppDispatch } from "./Service/store/store";
 import fetchProducts from "./Service/api/GetProducts";
 import { useEffect } from "react";
 

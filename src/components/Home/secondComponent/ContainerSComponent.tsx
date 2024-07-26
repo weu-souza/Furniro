@@ -1,5 +1,5 @@
 import ProductSlider from "./CarrosselS"
-import { useAppSelector } from "../../../Service/store/Products/Products.store";
+import { useAppSelector } from "../../../Service/store/store";
 
 const ContainerSComponent = () => {
   const products = useAppSelector((state) => state.product.products);

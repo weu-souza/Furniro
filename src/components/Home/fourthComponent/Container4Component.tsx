@@ -1,5 +1,5 @@
 import Carrossel4C from "./Carrossel4C";
-import { useAppSelector } from "../../../Service/store/Products/Products.store";
+import { useAppSelector } from "../../../Service/store/store";
 
 const Container4Component = () => {
   const products = useAppSelector((state) => state.product.products);
