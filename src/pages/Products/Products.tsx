@@ -13,6 +13,7 @@ const Products = () => {
     const selectedSku = params.sku
     const filteredProducts = products.filter(product => product.sku === selectedSku);
     const [mapProd,setMapProd] = useState<IProducts>()
+    const category =  products.filter(product => product.category === mapProd?.category);
 
 useEffect(()=>{
     if (filteredProducts.length > 0) {
@@ -24,7 +25,7 @@ useEffect(()=>{
     <div className="max-w-screen-xl mx-auto flex flex-col gap-20">
     {mapProd && <Product product={mapProd}/>}
       {mapProd && <Description product={mapProd}/>}
-      <RelatedProducts />
+      <RelatedProducts products={category.slice(0,4)}/>
     </div>
   )
 }
