@@ -7,6 +7,7 @@ import App from "../App";
 import Login from "../pages/login/Login";
 import Products from "../pages/Products/Products";
 import Cart from "../pages/Cart/Cart";
+import Checkout from "../pages/checkout/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -37,9 +38,14 @@ export const router = createBrowserRouter([
         path:"products/:sku",
         element:<Products />
 
-      },{
+      }
+      ,{
         path:"cart",
         element:<Cart/>
+      }
+      ,{
+        path:"checkout",
+        element:<Checkout/>
       }
     ],
   }
