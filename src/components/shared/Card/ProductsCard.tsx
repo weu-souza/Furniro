@@ -27,7 +27,7 @@ const Cards = ({ products }: cardsType) => {
     }
     
     const handleRedirect = ()=>{
-      navigate('/products')
+      navigate(`/products/${products.sku}`)
     }
     
   return (
