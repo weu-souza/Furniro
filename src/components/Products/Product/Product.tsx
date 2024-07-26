@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IProducts } from "../../../Service/api/model/ProductsModel";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,7 +18,10 @@ type ratingType = {
 };
 
 const Image = ({ product }: productType) => {
-  const [image, setImage] = useState<string>(product.images.mainImage);
+  const [image, setImage] = useState<string |null>(null);
+  useEffect(()=>{
+    setImage(product.images.mainImage)
+  },[product.images.mainImage])
   const handleclick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     const { src } = e.target as HTMLImageElement;
     setImage(src);
@@ -37,11 +40,11 @@ const Image = ({ product }: productType) => {
         ))}
       </div>
       <div className=" ">
-        <img
+        {image && <img
           src={image}
           alt="img principal"
           className="object-cover w-full  h-[500px] rounded-lg"
-        />
+        />}
       </div>
     </div>
   );
