@@ -3,6 +3,7 @@ import { IProducts } from "../../../Service/api/model/ProductsModel";
 import Compare from "../../../assets/icons/cardIcons/Compare";
 import Like from "../../../assets/icons/cardIcons/Like";
 import Share from "../../../assets/icons/cardIcons/Share";
+import { useNavigate } from "react-router-dom";
 
 type productsCardType = {
   products: IProducts[];
@@ -13,6 +14,7 @@ type cardsType = {
 };
 
 const Cards = ({ products }: cardsType) => {
+  const navigate = useNavigate()
     const [hover,setHover] = useState<boolean>(false);
     const MouseEnter = (e:React.MouseEvent) =>{
       if(e){
@@ -24,10 +26,12 @@ const Cards = ({ products }: cardsType) => {
         setHover(false)
     }
     
-    
+    const handleRedirect = ()=>{
+      navigate('/products')
+    }
     
   return (
-    <div onMouseEnter={MouseEnter} onMouseLeave={mouseDown}>
+    <div onMouseEnter={MouseEnter} onMouseLeave={mouseDown} onClick={handleRedirect} className="cursor-pointer">
             {hover?( <div className="relative flex-auto w-72 flex  bg-black bg-opacity-70 flex-col gap-4 p-2 rounded-md shadow-lg">
           <div className="absolute inset-0  opacity-30 rounded-md"></div>
           <div className="w-full relative z-10">
