@@ -1,11 +1,13 @@
 import Footing from "../../components/shared/Footing/Footing";
 import CartComponent from "../../components/Cart/CartComponent";
 import CartTotals from "../../components/Cart/CartTotals";
+import Heading from "../../components/shared/Heading/Heading";
 
 const Cart = () => {
   
   return (
     <div className="flex flex-col max-w-screen-xl gap-14 mx-auto ">
+        <Heading/>
       <div className="flex gap-14 ">
       <div className=" max-w-[900px] ">
       <div className="grid  grid-cols-4  w-full bg-cor-F9F1E7 py-6  px-32 ">
