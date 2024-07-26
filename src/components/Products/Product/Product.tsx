@@ -32,15 +32,15 @@ const Image = ({ product }: productType) => {
             src={img}
             key={index}
             alt="img1"
-            className="w-full object-cover rounded-lg"
+            className="w-full object-cover rounded-lg cursor-pointer"
           />
         ))}
       </div>
-      <div className="w-[423px] h-[500px] ">
+      <div className=" ">
         <img
           src={image}
           alt="img principal"
-          className="object-cover w-full rounded-lg"
+          className="object-cover w-full  h-[500px] rounded-lg"
         />
       </div>
     </div>
@@ -108,7 +108,6 @@ const CardProd = ({ product }: productType) => {
         </p>
         <p className="text-cor-9F9F9F">|</p>
         <p className="font-Poppins font-normal text-sm text-cor-9F9F9F">
-          {" "}
           5 Customer Review
         </p>
       </div>

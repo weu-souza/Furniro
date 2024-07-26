@@ -21,9 +21,9 @@ useEffect(()=>{
 },[filteredProducts,mapProd])
    
   return (
-    <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
+    <div className="max-w-screen-xl mx-auto flex flex-col gap-20">
     {mapProd && <Product product={mapProd}/>}
-      <Description />
+      {mapProd && <Description product={mapProd}/>}
       <RelatedProducts />
     </div>
   )
