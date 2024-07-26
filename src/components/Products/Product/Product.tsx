@@ -160,7 +160,7 @@ const CardProd = ({ product }: productType) => {
           >
             -
           </button>
-          <p className="font-Poppins font-normal text-base text-black">
+          <p className="font-Poppins font-normal text-base text-black p-2">
             {count}
           </p>
           <button

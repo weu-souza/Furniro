@@ -1,5 +1,6 @@
 import Footing from "../../components/shared/Footing/Footing";
 import CartComponent from "../../components/Cart/CartComponent";
+import CartTotals from "../../components/Cart/CartTotals";
 
 const Cart = () => {
   
@@ -22,7 +23,7 @@ const Cart = () => {
       <CartComponent/>
       </div>
 
-        <div>cartTotals</div>
+        <div><CartTotals/></div>
       </div>
       <Footing />
     </div>
