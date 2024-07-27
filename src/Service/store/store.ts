@@ -7,6 +7,7 @@ type InitialState = {
   products: IProducts[];
   category: string;
   filter: number;
+  cartQtd:number
 };
 
 
@@ -14,6 +15,7 @@ const initialState: InitialState = {
   products: [],
   category: "default",
   filter: 8,
+  cartQtd:Number(JSON.parse(localStorage.getItem("carrinho") || "[]").length)
 };
 
 const productSlice = createSlice({
@@ -29,16 +31,20 @@ const productSlice = createSlice({
     AddCategory: (state,action: PayloadAction<string>) => {
       state.category = action.payload;
     },
+    Addqtd: (state,action: PayloadAction<number>) => {
+      state.cartQtd = action.payload;
+    }
   },
 });
 
-export const { getProducts,AddCategory ,AddItem} = productSlice.actions;
+export const { getProducts,AddCategory ,AddItem,Addqtd} = productSlice.actions;
 
 export const store = configureStore({
   reducer: {
     product: productSlice.reducer,
     filter: productSlice.reducer,
     category: productSlice.reducer,
+    cartQtd:productSlice.reducer
   },
 });
 
@@ -53,3 +59,6 @@ export const useAppSelectorItem: TypedUseSelectorHook<RootState> = useSelector;
 
 export const useAppDispatchCategory = () => useDispatch<AppDispatch>();
 export const useAppSelectorCategory: TypedUseSelectorHook<RootState> = useSelector;
+
+export const useAppDispatchCartQtd = () => useDispatch<AppDispatch>();
+export const useAppSelectorCartQtd: TypedUseSelectorHook<RootState> = useSelector;

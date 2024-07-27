@@ -5,11 +5,13 @@ import '@splidejs/react-splide/css';
 
 import { getProducts, useAppDispatch } from "./Service/store/store";
 import fetchProducts from "./Service/api/GetProducts";
-import { useEffect } from "react";
+import { useEffect} from "react";
+
 
 
 function App() {
   const dispatch = useAppDispatch();
+  
   useEffect(() => {
     const prod = async () => {
       try {

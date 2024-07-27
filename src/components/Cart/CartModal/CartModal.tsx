@@ -2,9 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import CloseCartModal from "../../../assets/icons/Cart/CloseCartModal"
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { ICarrinho } from "../../../Service/api/model/CartModel"
-import { DeleteCart, GetCart } from "../../../Service/Cart/Cart"
+import { DeleteCart, GetCart} from "../../../Service/Cart/Cart"
+import { Addqtd, useAppDispatchCartQtd } from "../../../Service/store/store"
 
 type cartType ={
   itensCarrinho:ICarrinho
@@ -31,38 +32,49 @@ return(
 
 
 const CartModal = () => {
+  const dispatch = useAppDispatchCartQtd();
   const navigate = useNavigate()
-  const [itensCarrinho,setItensCarrinho] = useState<ICarrinho[]>([])
-  const [totalCart,setTotalCart] = useState(0)
+  const [itensCarrinho, setItensCarrinho] = useState<ICarrinho[]>([]);
+    const [totalCart, setTotalCart] = useState(0);
+  
+const exibeCart = () =>{
+  const itens = GetCart();
+  setItensCarrinho(itens);
+}
+
+    useEffect(() => {
+      exibeCart()
+    }, []);
+  
+    const calculaTotal = useCallback(() => {
+      return Number(itensCarrinho.reduce((prev, curr) => prev + (curr.normalPrice * curr.quantidade), 0).toFixed(2));
+    }, [itensCarrinho]);
+    
+  
+    useEffect(() => {
+      const total = calculaTotal();
+      setTotalCart(total);
+    }, [itensCarrinho, calculaTotal]);
+
+
+
+    const deleteCart = (id:number,e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+      e.stopPropagation()
+      DeleteCart(id)
+      exibeCart()
+      calculaTotal()
+      const i = Number(JSON.parse(localStorage.getItem("carrinho") || "[]").length) ;
+      dispatch(Addqtd(i));
+    }
+
+
+  
   const redirectCart = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
     e.stopPropagation();
     navigate('/cart')
   }
-  
-  const getCart = () =>{
-    const cart = GetCart()
-    setItensCarrinho(cart)
-  }
-  const calculaTotal=()=> {
-    return  Number(itensCarrinho.reduce((prev,curr) => prev + (curr.normalPrice * curr.quantidade),0).toFixed(2))
-    }
 
-  useEffect(()=>{
-    getCart()
-
-    setTotalCart(calculaTotal);
-  },[calculaTotal])
-
-  
-  
- 
- 
-   const deleteCart = (id:number,e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
-     e.stopPropagation()
-     setItensCarrinho(itensCarrinho.filter(item => item.id !== id))
-     DeleteCart(id)
-     calculaTotal()
-   }
+   
 
 
 
@@ -72,14 +84,14 @@ const CartModal = () => {
   }
   
   return (
-    <div className="flex flex-col w-[417px] shadow-xl shadow-cor-shadow rounded-sm bg-white">
+    <div className="flex flex-col w-[417px] shadow-xl px-2 shadow-cor-shadow rounded-sm bg-white">
       <div className="flex justify-between px-8 py-7">
       <h1 className="font-Poppins font-semibold text-2xl text-black">Shopping Cart</h1>
       <button><CloseCartModal/></button>
       </div>
       <div className="border border-cor-D9D9D9 max-w-[287px] ml-8"></div>
       <div className="flex flex-col justify-between">
-        {itensCarrinho.map((cart)=>(
+        {itensCarrinho && itensCarrinho.map((cart)=>(
           <CartItems key={cart.id} itensCarrinho={cart} deleteCart={deleteCart} />
         ))}
       <div className="px-8 ">

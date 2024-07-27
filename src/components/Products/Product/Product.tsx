@@ -10,6 +10,7 @@ import FullStar from "../../../assets/icons/ProductsIcon/FullStar";
 import HalfStar from "../../../assets/icons/ProductsIcon/HalfStar";
 import { ICarrinho } from "../../../Service/api/model/CartModel";
 import { AddCart } from "../../../Service/Cart/Cart";
+import { Addqtd, useAppDispatchCartQtd } from "../../../Service/store/store";
 
 type productType = {
   product: IProducts;
@@ -100,6 +101,7 @@ const Size = ({ size, isActive, onClick }: SizeType) => {
 const CardProd = ({ product }: productType) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [count, setCount] = useState<number>(0);
+  const dispatch = useAppDispatchCartQtd();
 
   const handleAddToCart = () => {
     const produto: ICarrinho = {
@@ -109,6 +111,8 @@ const CardProd = ({ product }: productType) => {
     if (count > 0) {
       AddCart(produto);
     }
+    const i = Number(JSON.parse(localStorage.getItem("carrinho") || "[]").length) ;
+    dispatch(Addqtd(i));
   };
 
   return (
