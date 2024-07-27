@@ -1,19 +1,15 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { IContact } from "../../Service/api/model/ContactModel";
 
-interface IFormInput {
-  firstName: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+
 
 const ContactForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+  } = useForm<IContact>();
+  const onSubmit: SubmitHandler<IContact> = (data) => console.log(data);
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -33,10 +29,15 @@ const ContactForm = () => {
 
       <label className="label flex flex-col gap-2">
         Email address
-        <input className="input" {...register("email", { required: true })} placeholder="Abc@def.com"/>
+        <input className="input" {...register("email", {
+        required: 'Email is required',
+        pattern: {
+            value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            message: 'Please enter a valid email',
+        }})} placeholder="Abc@def.com"/>
       </label>
       {errors.email && (
-        <span className="text-red-500">This field is required</span>
+        <span className="text-red-500">{errors.email.message}</span>
       )}
 
       <label className="label flex flex-col gap-2">

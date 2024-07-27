@@ -23,7 +23,8 @@ export default {
         "cor-2EC1AC":"#2EC1AC",
         "cor-F4F5F7":"#F4F5F7",
         "cor-E89F71":"#E89F71",
-        "cor-242424":"#242424"
+        "cor-242424":"#242424",
+        "cor-shadow":"rgba(0, 0, 0,0.25)"
       },
     },
     backgroundImage:{
