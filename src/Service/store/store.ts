@@ -1,8 +1,6 @@
 import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProducts } from "../api/model/ProductsModel";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-
-
 type InitialState = {
   products: IProducts[];
   category: string;
@@ -15,7 +13,7 @@ const initialState: InitialState = {
   products: [],
   category: "default",
   filter: 8,
-  cartQtd:Number(JSON.parse(localStorage.getItem("carrinho") || "[]").length)
+  cartQtd:Number(JSON.parse(localStorage.getItem("carrinho") || "[]").length),
 };
 
 const productSlice = createSlice({
