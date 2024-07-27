@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import CloseCartModal from "../../../assets/icons/Cart/CloseCartModal"
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from "react-router-dom"
 
 const  CartItems = () =>{
 return(
@@ -20,6 +21,16 @@ return(
 
 
 const CartModal = () => {
+  const navigate = useNavigate()
+  const redirectCart = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+    e.stopPropagation();
+    navigate('/cart')
+  }
+
+  const redirectCheckout = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+    e.stopPropagation();
+    navigate("/checkout")
+  }
   
   return (
     <div className="flex flex-col w-[417px] shadow-xl shadow-cor-shadow rounded-sm bg-white">
@@ -40,8 +51,8 @@ const CartModal = () => {
       <div className="border border-cor-D9D9D9"></div>
 
       <div className="p-2 flex justify-around pt-7">
-        <button className="py-1  px-7 border border-black rounded-xl font-Poppins font-normal text-xs text-black">cart</button>
-        <button className="py-1  px-7 border border-black rounded-xl font-Poppins font-normal text-xs text-black">Checkout</button>
+        <button className="py-1  px-7 border border-black rounded-xl font-Poppins font-normal text-xs text-black" onClick={redirectCart}>cart</button>
+        <button className="py-1  px-7 border border-black rounded-xl font-Poppins font-normal text-xs text-black" onClick={redirectCheckout}>Checkout</button>
         <button className="py-1  px-7 border border-black rounded-xl font-Poppins font-normal text-xs text-black">Comparison</button>
       </div>
 

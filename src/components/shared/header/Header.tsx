@@ -4,15 +4,28 @@ import CartIcon from '../../../assets/icons/CartIcon'
 import LogoIcon from '../../../assets/icons/LogoIcon'
 import CartModal from '../../Cart/CartModal/CartModal'
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../../../Service/firebase/firebaseConfig'
 
 const Header = () => {
   const [open,setOpen] = useState<boolean>(false)
+  const [user] = useAuthState(auth);
   const OpenCart = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
     e.stopPropagation();
     setOpen(true)
   }
+
+  const closeCart = () =>{
+    setOpen(false)
+  }
+
+  const handleLogout = async () =>{
+    await auth.signOut();
+  }
   return (
-    <header className=' flex flex-wrap md:justify-between py-7 max-w-screen-xl mx-auto items-center' onClick={()=> setOpen(false)}>
+    <header className=' flex flex-wrap md:justify-between py-7 max-w-screen-xl mx-auto items-center' onClick={closeCart}>
       <div className='mx-auto md:mx-0 mb-4 md:mb-0'>
         <LogoIcon/>
       </div>
@@ -23,7 +36,8 @@ const Header = () => {
       <Link to={"/contact"} className="navigation">Contact</Link>
      </div>
      <div className='flex gap-5 items-center self-end'>
-      <Link to={'/login'}><User /></Link>
+      {user?<button onClick={handleLogout} className='flex items-center gap-3 py-2 px-8 rounded-xl bg-cor-B88E2F text-white font-Poppins font-bold text-base'>Sair<FontAwesomeIcon icon={faRightFromBracket} /></button>:<Link to={'/login'}><User /></Link>}
+      
       <button onClick={(e)=> OpenCart(e)}><CartIcon/></button>
      </div>
 
