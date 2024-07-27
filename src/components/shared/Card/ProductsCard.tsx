@@ -4,6 +4,8 @@ import Compare from "../../../assets/icons/cardIcons/Compare";
 import Like from "../../../assets/icons/cardIcons/Like";
 import Share from "../../../assets/icons/cardIcons/Share";
 import { useNavigate } from "react-router-dom";
+import { ICarrinho } from "../../../Service/api/model/CartModel";
+import { AddCart } from "../../../Service/Cart/Cart";
 
 type productsCardType = {
   products: IProducts[];
@@ -15,11 +17,16 @@ type cardsType = {
 
 
 
-const CardHover = ({products}:cardsType) =>{
- const handleAddCArd = (products:IProducts, e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+const CardHover = ({products}:cardsType) =>{ 
+  const handleAddCArd = (products:IProducts, e:React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
   e.stopPropagation();
-  // console.log(products)
+  const produto: ICarrinho = {
+    ...products ,
+    quantidade: 1,
+  };
+  AddCart(produto);
   }
+
   return( <div className="relative flex-auto w-72 flex  bg-black bg-opacity-70 flex-col gap-4 p-2 rounded-md shadow-lg">
     <div className="absolute inset-0  opacity-30 rounded-md"></div>
     <div className="w-full relative z-10">

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import Description from "../../components/Products/Description/Description"
 import Product from "../../components/Products/Product/Product"
-import RelatedProducts from "../../components/Products/RelatedProducts"
+import RelatedProducts from "../../components/Products/RelatedProducts/RelatedProducts"
 import { useAppSelector } from "../../Service/store/store";
 import { useEffect, useState } from "react";
 import { IProducts } from "../../Service/api/model/ProductsModel";

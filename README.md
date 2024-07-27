@@ -28,3 +28,10 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Aviso
+
+a parte de login e feita pelo firebase, e eu não coloquei as minhas configurações no arquivo.
+
+para acessar a aplicação você vai ter que criar uma conta no firebase e pegar a parte de configuração e colocar no example.env, as variaveis ja estão prontas para serem consumidas pelo arquivo de configuração, e são com o mesmo nome das config do firebase.
+

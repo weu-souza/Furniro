@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import { IProducts } from "../../Service/api/model/ProductsModel"
-import ProductsCard from "../shared/Card/ProductsCard"
+import { IProducts } from "../../../Service/api/model/ProductsModel"
+import ProductsCard from "../../shared/Card/ProductsCard"
 type RelatedProductsType ={
   products:IProducts[]
 }

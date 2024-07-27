@@ -8,6 +8,8 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import FullStar from "../../../assets/icons/ProductsIcon/FullStar";
 import HalfStar from "../../../assets/icons/ProductsIcon/HalfStar";
+import { ICarrinho } from "../../../Service/api/model/CartModel";
+import { AddCart } from "../../../Service/Cart/Cart";
 
 type productType = {
   product: IProducts;
@@ -18,10 +20,10 @@ type ratingType = {
 };
 
 const Image = ({ product }: productType) => {
-  const [image, setImage] = useState<string |null>(null);
-  useEffect(()=>{
-    setImage(product.images.mainImage)
-  },[product.images.mainImage])
+  const [image, setImage] = useState<string | null>(null);
+  useEffect(() => {
+    setImage(product.images.mainImage);
+  }, [product.images.mainImage]);
   const handleclick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     const { src } = e.target as HTMLImageElement;
     setImage(src);
@@ -40,11 +42,13 @@ const Image = ({ product }: productType) => {
         ))}
       </div>
       <div className=" ">
-        {image && <img
-          src={image}
-          alt="img principal"
-          className="object-cover w-full  h-[500px] rounded-lg"
-        />}
+        {image && (
+          <img
+            src={image}
+            alt="img principal"
+            className="object-cover w-full  h-[500px] rounded-lg"
+          />
+        )}
       </div>
     </div>
   );
@@ -96,6 +100,16 @@ const Size = ({ size, isActive, onClick }: SizeType) => {
 const CardProd = ({ product }: productType) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [count, setCount] = useState<number>(0);
+
+  const handleAddToCart = () => {
+    const produto: ICarrinho = {
+      ...product,
+      quantidade: count,
+    };
+    if (count > 0) {
+      AddCart(produto);
+    }
+  };
 
   return (
     <div className="flex flex-col max-w-[606px] gap-10">
@@ -170,7 +184,10 @@ const CardProd = ({ product }: productType) => {
             +
           </button>
         </div>
-        <button className="border border-black py-5 px-10 rounded-xl font-Poppins font-normal text-xl text-black">
+        <button
+          onClick={handleAddToCart}
+          className="border border-black py-5 px-10 rounded-xl font-Poppins font-normal text-xl text-black"
+        >
           add to cart
         </button>
       </div>
@@ -178,11 +195,16 @@ const CardProd = ({ product }: productType) => {
       <div className="border border-cor-D9D9D9 max-w-[605px]"></div>
 
       <div className="flex flex-col gap-3">
-        <p className="font-Poppins font-normal text-base text-cor-9F9F9F flex"><span className="mr-[61px]">Sku</span> <span>:{product.sku}</span></p>
-        <p className="font-Poppins font-normal text-base text-cor-9F9F9F flex "><span className="mr-[16px]">Category</span> <span>: {product.category}</span></p>
+        <p className="font-Poppins font-normal text-base text-cor-9F9F9F flex">
+          <span className="mr-[61px]">Sku</span> <span>:{product.sku}</span>
+        </p>
+        <p className="font-Poppins font-normal text-base text-cor-9F9F9F flex ">
+          <span className="mr-[16px]">Category</span>{" "}
+          <span>: {product.category}</span>
+        </p>
         <div className="flex font-Poppins font-normal text-base text-cor-9F9F9F">
           <span className="mr-[52px]">Tags</span>
-          <div className="flex gap-2 " >
+          <div className="flex gap-2 ">
             <p>:</p>
             {product.tags.map((tags, index) => (
               <p key={index}>{tags}</p>
@@ -191,19 +213,23 @@ const CardProd = ({ product }: productType) => {
         </div>
 
         <div className="flex items-center">
-          <p className="font-Poppins font-normal text-base text-cor-9F9F9F mr-[44px]">Share</p>
+          <p className="font-Poppins font-normal text-base text-cor-9F9F9F mr-[44px]">
+            Share
+          </p>
           <div className="flex flex-wrap gap-1">
-            <p className="font-Poppins font-normal text-base text-cor-9F9F9F">:</p>
+            <p className="font-Poppins font-normal text-base text-cor-9F9F9F">
+              :
+            </p>
             <div className="flex flex-wrap gap-6">
-            <Link to={"https://www.facebook.com/"} className="">
-              <FontAwesomeIcon icon={faFacebookF} />
-            </Link>
-            <Link to={"https://x.com/?lang=pt-br"} className="">
-              <FontAwesomeIcon icon={faTwitter} />
-            </Link>
-            <Link to={"https://br.linkedin.com/"} className="">
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </Link>
+              <Link to={"https://www.facebook.com/"} className="">
+                <FontAwesomeIcon icon={faFacebookF} />
+              </Link>
+              <Link to={"https://x.com/?lang=pt-br"} className="">
+                <FontAwesomeIcon icon={faTwitter} />
+              </Link>
+              <Link to={"https://br.linkedin.com/"} className="">
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </Link>
             </div>
           </div>
         </div>
