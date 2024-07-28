@@ -2050,26 +2050,6 @@
         ]
       }
     }
-  ],
-  "Users":[
-    {
-      "id":1,
-    "login":"weu",
-    "password":"123",
-    "logged":"155432"
-  },
-    {
-      "id":2,
-    "login":"admin",
-    "password":"123",
-    "logged":"155432"
-  },
-    {
-      "id":3,
-    "login":"user",
-    "password":"123",
-    "logged":"155432"
-  }
   ]
 }
 

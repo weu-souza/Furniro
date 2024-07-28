@@ -6,7 +6,7 @@ import Share from "../../../assets/icons/cardIcons/Share";
 import { useNavigate } from "react-router-dom";
 import { ICarrinho } from "../../../Service/api/model/CartModel";
 import { AddCart } from "../../../Service/Cart/Cart";
-import { useAppDispatchCartQtd,Addqtd } from "../../../Service/store/store";
+import { useAppDispatchCartQtd, Addqtd } from "../../../Service/store/store";
 type productsCardType = {
   products: IProducts[];
 };
@@ -28,7 +28,9 @@ const CardHover = ({ products }: cardsType) => {
       quantidade: 1,
     };
     AddCart(produto);
-    const i = Number(JSON.parse(localStorage.getItem("carrinho") || "[]").length) ;
+    const i = Number(
+      JSON.parse(localStorage.getItem("carrinho") || "[]").length
+    );
     dispatch(Addqtd(i));
   };
 
@@ -87,13 +89,13 @@ const CardNoHover = ({ products }: cardsType) => {
   return (
     <div className="flex-auto w-72 flex flex-col gap-4 bg-cor-F4F5F7 p-2 rounded-md">
       <div className="relative w-full">
-        <p className="absolute right-6 top-6">
+        <div className="absolute right-6 top-6">
           {products.new ? (
             <div className="w-12 rounded-full m-2 bg-cor-2EC1AC flex justify-center">
               <div className="">
                 <p
                   className="py-3 px-3 
-      font-Poppins font-medium text-base text-white"
+                  font-Poppins font-medium text-base text-white"
                 >
                   new
                 </p>
@@ -103,14 +105,14 @@ const CardNoHover = ({ products }: cardsType) => {
             <div className="w-12 rounded-full m-2 bg-cor-E97171 flex justify-center">
               <p
                 className="py-3 px-3 
-      font-Poppins font-medium text-base
-       text-white"
+              font-Poppins font-medium text-base
+                text-white"
               >
                 -{(products.discountPercentage * 100).toFixed(0)}%
               </p>
             </div>
           )}
-        </p>
+        </div>
         <img
           src={products.images.mainImage}
           className="object-contain w-full"
@@ -138,9 +140,6 @@ const CardNoHover = ({ products }: cardsType) => {
     </div>
   );
 };
-
-
-
 
 const Cards = ({ products }: cardsType) => {
   const navigate = useNavigate();

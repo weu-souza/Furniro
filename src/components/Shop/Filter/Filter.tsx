@@ -1,7 +1,7 @@
 import FilterIcon from "../../../assets/icons/shop/FilterIcon";
 import CiGridBigRound from "../../../assets/icons/shop/CiGridBigRound";
 import ViewList from "../../../assets/icons/shop/ViewList";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AddItem, useAppDispatchItems,AddCategory, useAppDispatchCategory } from "../../../Service/store/store";
 interface ItemListProps {
   currentPage: number;
@@ -37,7 +37,7 @@ const handleChangeItens = (e: React.ChangeEvent<HTMLSelectElement>)=>{
         <CiGridBigRound />
         <ViewList />
         <p className="font-Poppins font-normal text-base text-black">
-          Showing {displayedFrom}–{displayedTo} of {totalItems} results
+          Showing {displayedFrom}–{displayedTo} of {totalItems + 1} results
         </p>
       </div>
       <form className="flex gap-5 items-center justify-center my-auto">
