@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { IProducts } from "../../../Service/api/model/ProductsModel";
 import Compare from "../../../assets/icons/cardIcons/Compare";
 import Like from "../../../assets/icons/cardIcons/Like";
@@ -72,11 +72,11 @@ const CardHover = ({ products }: cardsType) => {
         </p>
         <div className="flex justify-between">
           <p className="font-Poppins font-semibold text-xl text-cor-3A3A3A">
-            Rp {products.normalPrice}
+            Rp {products.salePrice}
           </p>
           {!products.new && (
             <p className="font-Poppins font-normal text-base text-cor-B0B0B0 line-through">
-              Rp {products.salePrice}
+              Rp {products.normalPrice}
             </p>
           )}
         </div>
@@ -128,11 +128,11 @@ const CardNoHover = ({ products }: cardsType) => {
         </p>
         <div className="flex justify-between ">
           <p className="font-Poppins font-semibold text-xl text-cor-3A3A3A">
-            Rp {products.normalPrice}
+            Rp {products.salePrice}
           </p>
           {!products.new && (
             <p className="font-Poppins font-normal text-base text-cor-B0B0B0 line-through">
-              Rp {products.salePrice}
+              Rp {products.normalPrice}
             </p>
           )}
         </div>
@@ -144,15 +144,23 @@ const CardNoHover = ({ products }: cardsType) => {
 const Cards = ({ products }: cardsType) => {
   const navigate = useNavigate();
   const [hover, setHover] = useState<boolean>(false);
-  const MouseEnter = (e: React.MouseEvent) => {
-    if (e) {
-      setHover(true);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+
+  const handleMouseEnter = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
+    setHover(true);
   };
 
-  const mouseDown = () => {
-    setHover(false);
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => {
+      setHover(false);
+    }, 0);
   };
+
 
   const handleRedirect = () => {
     navigate(`/products/${products.sku}`);
@@ -160,8 +168,8 @@ const Cards = ({ products }: cardsType) => {
 
   return (
     <div
-      onMouseEnter={MouseEnter}
-      onMouseLeave={mouseDown}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onClick={handleRedirect}
       className="cursor-pointer"
     >
