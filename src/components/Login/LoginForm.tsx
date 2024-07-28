@@ -9,6 +9,7 @@ import {
 import { auth } from "../../Service/firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+
 const LoginForm = () => {
   const [signInWithGoogle, userEmail] =
     useSignInWithGoogle(auth);
@@ -35,7 +36,7 @@ const LoginForm = () => {
       navigate('/');
     }
   },[userGoogle,userEmail])
-  
+
 
   return (
     <div>

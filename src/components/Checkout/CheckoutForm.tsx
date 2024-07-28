@@ -1,5 +1,7 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { ICheckout } from "../../Service/api/model/CheckoutModel";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../Service/firebase/firebaseConfig";
 
 type CheckouType = {
   register: UseFormRegister<ICheckout>,
@@ -7,15 +9,20 @@ type CheckouType = {
 
 }
 
+
 export default function CheckoutForm({register, errors}:CheckouType) {
+  const [user] =  useAuthState(auth);
+  const displayName = user?.displayName;
+  const [firstName, lastName] = displayName!.split(' ');
+  const email = user?.email;
 
   return (   
       <div className="flex flex-col gap-2">
       <div className="flex gap-8">
         <label  className="flex flex-col ">
           <span className="label">First Name</span>
-          <input
-            {...register("firstName", { required: true })}
+          <input 
+            {...register("firstName", { required: true,value:firstName })}
             className="input"
           />
           {errors.firstName && (
@@ -25,7 +32,7 @@ export default function CheckoutForm({register, errors}:CheckouType) {
 
         <label className="flex flex-col">
             <span className="label">Last name</span>
-        <input {...register("lastName", { required: true })} className="input"/>
+        <input {...register("lastName", { required: true,value:lastName })} className="input"/>
         {errors.lastName && (
           <span className="text-red-500">This field is required</span>
         )}
@@ -80,7 +87,7 @@ export default function CheckoutForm({register, errors}:CheckouType) {
       )}
 
       <label htmlFor="email" className="label">Email address</label>
-      <input {...register("email", { required: true })} id="email" className="input"/>
+      <input  {...register("email", { required: true,value:email})} id="email" className="input"/>
       
       {errors.email && (
         <span className="text-red-500">This field is required</span>

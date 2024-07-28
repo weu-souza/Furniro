@@ -139,6 +139,9 @@ const CardNoHover = ({ products }: cardsType) => {
   );
 };
 
+
+
+
 const Cards = ({ products }: cardsType) => {
   const navigate = useNavigate();
   const [hover, setHover] = useState<boolean>(false);

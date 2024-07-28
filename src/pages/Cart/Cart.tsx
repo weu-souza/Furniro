@@ -19,7 +19,6 @@ const Cart = () => {
     const itens = GetCart();
     setItensCarrinho(itens);
   };
-
   useEffect(() => {
     exibeCart();
   }, []);
@@ -56,7 +55,7 @@ const Cart = () => {
       item.id === id ? { ...item, quantidade: item.quantidade + 1 } : item
     );
     setItensCarrinho(updatedItems);
-    localStorage.setItem("carrinho", JSON.stringify(updatedItems)); // Atualizar localStorage
+    localStorage.setItem("carrinho", JSON.stringify(updatedItems)); 
     dispatch(Addqtd(updatedItems.length));
   };
 
@@ -67,7 +66,7 @@ const Cart = () => {
         : item
     );
     setItensCarrinho(updatedItems);
-    localStorage.setItem("carrinho", JSON.stringify(updatedItems)); // Atualizar localStorage
+    localStorage.setItem("carrinho", JSON.stringify(updatedItems)); 
     dispatch(Addqtd(updatedItems.length));
   };
   const handleCheckout = () => {
