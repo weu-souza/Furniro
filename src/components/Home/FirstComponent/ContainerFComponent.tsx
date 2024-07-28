@@ -2,7 +2,7 @@
 import Card from './Card'
 const ContainerFComponent = () => {
   return (
-    <div className=' bg-first-component bg-cover bg-bottom  pt-40 pb-32 flex justify-end items-center'>
+    <div className='  bg-cover bg-bottom  pt-40 pb-32 flex justify-end items-center' style={{backgroundImage:"url(https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-images/imgBgHome.jpeg)"}}>
       <Card/>
     </div>
   )

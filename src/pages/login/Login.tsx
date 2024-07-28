@@ -1,4 +1,4 @@
-import LogoIcon from "../../assets/icons/LogoIcon"
+import LogoIcon from "../../assets/icons/logo_furniro"
 import LoginForm from "../../components/Login/LoginForm"
 
 const Login = () => {

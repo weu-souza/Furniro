@@ -1,7 +1,14 @@
-const Compare = () => {
+export const Compare = () => {
   return (
     <div>
-      <svg
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Compare.svg" alt="" />
+      
+    </div>
+  );
+};
+
+
+{/* <svg
         width="14"
         height="14"
         viewBox="0 0 14 14"
@@ -11,9 +18,4 @@ const Compare = () => {
           d="M9.08004 6L10.08 7L13.52 3.55L10 0L9.00004 1L10.8 2.8H1.00004V4.2H10.82L9.08004 6ZM4.86004 8L3.86004 7L0.420044 10.5L3.91004 14L4.91004 13L3.10004 11.2H13V9.8H3.10004L4.86004 8Z"
           fill="white"
         />
-      </svg>
-    </div>
-  );
-};
-
-export default Compare;
+      </svg> */}

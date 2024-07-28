@@ -1,4 +1,4 @@
-import CartDell from "../../assets/icons/Cart/CartDell";
+import {CartDell} from "../../assets/icons/Cart/CartDell";
 import { ICarrinho } from "../../Service/api/model/CartModel";
 
 type cartType ={

@@ -1,7 +1,7 @@
 import {Link } from 'react-router-dom'
 import User from '../../../assets/icons/UserIcon'
 import CartIcon from '../../../assets/icons/CartIcon'
-import LogoIcon from '../../../assets/icons/LogoIcon'
+import LogoIcon from '../../../assets/icons/logo_furniro'
 import CartModal from '../../Cart/CartModal/CartModal'
 import {useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

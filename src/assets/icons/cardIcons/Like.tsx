@@ -1,7 +1,14 @@
-const Like = () => {
+export const Like = () => {
   return (
     <div>
-      <svg
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Like.svg" alt="" />
+      
+    </div>
+  );
+};
+
+
+{/* <svg
         width="16"
         height="15"
         viewBox="0 0 16 15"
@@ -13,9 +20,5 @@ const Like = () => {
           stroke="white"
           strokeWidth="1.8"
         />
-      </svg>
-    </div>
-  );
-};
+      </svg> */}
 
-export default Like;
