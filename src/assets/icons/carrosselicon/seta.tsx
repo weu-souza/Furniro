@@ -1,10 +1,6 @@
 const Seta = () => {
   return (
-    <div>
-      <img
-        src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/carrosselicon/seta.svg"
-        alt=""
-      />
+    <div style={{backgroundImage:"url(https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/carrosselicon/seta.svg)"}} className=" bg-no-repeat w-8 h-8 bg-center">
     </div>
   );
 };

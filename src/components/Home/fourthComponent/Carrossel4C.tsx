@@ -49,7 +49,7 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
     const adjustHeight = () => {
       const splideInstance = splideRef.current?.splide;
       if (splideInstance) {
-        const slides = document.querySelectorAll<HTMLImageElement>('.splide__slide img');
+        const slides = document.querySelectorAll<HTMLImageElement>('.splide__slide .image-carrossel');
         slides.forEach((slide, index) => {
           if (index === splideInstance.index) {
             slide.style.height = '582px';
@@ -129,12 +129,12 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
                 <p className="font-Poppins font-semibold text-3xl text-cor-3A3A3A">Inner Peace</p>
                 </div>
                 <div className="self-end">
-                  <button className="p-5 bg-cor-B88E2F "><Seta/></button>
+                  <button className="flex  items-center p-5 h-14 bg-cor-B88E2F "><Seta/></button>
                 </div>
               </div>
               <img
                 src={prod.images.mainImage}
-                className="w-full h-full object-cover rounded-sm mx-auto"
+                className=" image-carrossel w-full h-full object-cover rounded-sm mx-auto"
                 alt={prod.category}
               />
             </div>
