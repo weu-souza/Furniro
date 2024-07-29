@@ -16,7 +16,7 @@ para acessar a aplicação você vai ter que criar uma conta no firebase e pegar
 # Ativar Login
 
 - Após criar o projto no firebase e configurar o .env va para autentication
--  Vá em métodos de login
+- Vá em métodos de login
 - Adicionar fornecedor
 - Adicione email/senha
 - Adicione google
@@ -75,14 +75,14 @@ checkout e o formulario de pagamento onde existem 2 funcionalidades, formulario 
 
 # login
 O login e um formulario com a funcionalidade de login, com 3 botões `obs:` precisa fazer login para acessar a pagina de checkout e carrinho.
-<a href="#aviso" style="color:yellow;">Aviso</a> O login foi feito com o firebase, ve a sessão de aviso para entender como configurar.
+`Aviso` O login foi feito com o firebase, ve a sessão de <a href="#aviso" style="color:yellow;">Aviso</a> para entender como configurar.
 - `Login` ao preencher o formulario e apertar em login ele loga na aplicação
 - `clique aqui` redireciona para a pagina de registro 
 - `Google` adiciona um usuario com a conta do google.
 
 # registro
 um formulario de registro para acessar a aplicação com 2 botões,
-<a href="#aviso" style="color:yellow;">Aviso</a> O Registro foi feito com o firebase, ve a sessão de aviso para entender como configurar.
+`Aviso` O Registro foi feito com o firebase, ve a sessão de <a href="#aviso" style="color:yellow;">Aviso</a> para entender como configurar.
 
 - `Login ` redireciona para a tela de login.
 - `register` registra e loga o usuario na aplicação.
