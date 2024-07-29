@@ -57,7 +57,7 @@ const Checkout = () => {
   return (
     <div className="flex flex-col gap-5 mx-auto max-w-screen-xl">
       <Heading />
-      <form onSubmit={handleSubmit(onSubmit)} className="flex gap-x-32">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex gap-x-32 py-10 mx-auto">
         <CheckoutForm errors={errors} register={register} setValue={setValue} />
         <PlaceOrder
           register={register}

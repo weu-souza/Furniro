@@ -32,9 +32,9 @@ const PlaceOrder = ({ register, checkout, total }: PlaceType) => {
           </p>
          </div>
       <div className="flex flex-row justify-between">
-        <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col gap-5 cart-scrool">
          
-          {checkout.map((items) => (
+        {checkout.map((items) => (
             <div key={items.id} className="flex gap-5 " >
               <p className=" font-Poppins font-normal text-base text-cor-9F9F9F w-[300px]">
                 {items.title}

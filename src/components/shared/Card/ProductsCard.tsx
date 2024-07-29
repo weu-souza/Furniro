@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { IProducts } from "../../../Service/api/model/ProductsModel";
 import {Compare} from "../../../assets/icons/cardIcons/Compare";
 import {Like} from "../../../assets/icons/cardIcons/Like";
@@ -35,10 +34,10 @@ const CardHover = ({ products }: cardsType) => {
   };
 
   return (
-    <div className="relative flex-auto w-72 flex bg-black bg-opacity-70 flex-col gap-4 p-2 rounded-md shadow-lg">
-      <div className="absolute inset-0  opacity-30 rounded-md"></div>
+    <div className=" card-hover flex-auto w-72 flex bg-cor-3A3A3A  flex-col gap-4  rounded-md">
+      <div className=" bg-opacity-50  ">
       <div className="w-full relative z-10">
-        <div className="absolute top-32 left-6 flex flex-col mx-auto z-20">
+        <div className="absolute   top-32 left-6 flex flex-col mx-auto z-20">
           <button
             onClick={(e) => handleAddCArd(products, e)}
             className="font-Poppins font-semibold text-base text-cor-E89F71 py-3 px-14 bg-white"
@@ -63,14 +62,14 @@ const CardHover = ({ products }: cardsType) => {
           alt={products.title}
         />
       </div>
-      <div className="flex flex-col gap-2 bg-opacity-95 z-10">
-        <h3 className="font-Poppins font-semibold text-2xl text-cor-3A3A3A">
+      <div className="flex flex-col gap-2  px-2 z-20 pt-4 pb-2 bg-cor-F4F5F7 opacity-50">
+        <h3 className="font-Poppins font-semibold text-2xl text-cor-3A3A3A ">
           {products.title}
         </h3>
         <p className="font-Poppins font-medium text-base text-cor-898989">
           {products.description.short}
         </p>
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <p className="font-Poppins font-semibold text-xl text-cor-3A3A3A">
             Rp {products.salePrice}
           </p>
@@ -81,13 +80,14 @@ const CardHover = ({ products }: cardsType) => {
           )}
         </div>
       </div>
+      </div>
     </div>
   );
 };
 
 const CardNoHover = ({ products }: cardsType) => {
   return (
-    <div className="flex-auto w-72 flex flex-col gap-4 bg-cor-F4F5F7 p-2 rounded-md">
+    <div className=" card-no-hover flex-auto w-72 flex flex-col gap-4 bg-cor-F4F5F7  rounded-md">
       <div className="relative w-full">
         <div className="absolute right-6 top-6">
           {products.new ? (
@@ -119,7 +119,7 @@ const CardNoHover = ({ products }: cardsType) => {
           alt={products.title}
         />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 px-2 pb-2">
         <h3 className="font-Poppins font-semibold text-2xl text-cor-3A3A3A">
           {products.title}
         </h3>
@@ -143,42 +143,22 @@ const CardNoHover = ({ products }: cardsType) => {
 
 const Cards = ({ products }: cardsType) => {
   const navigate = useNavigate();
-  const [hover, setHover] = useState<boolean>(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-
-  const handleMouseEnter = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-    setHover(true);
-  };
-
-  const handleMouseLeave = () => {
-    timerRef.current = setTimeout(() => {
-      setHover(false);
-    }, 0);
-  };
-
-
   const handleRedirect = () => {
     navigate(`/products/${products.sku}`);
   };
 
   return (
     <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={handleRedirect}
-      className="cursor-pointer"
+      className="card-father cursor-pointer"
     >
-      {hover ? (
-        <CardHover products={products} />
-      ) : (
-        <CardNoHover products={products} />
-      )}
-    </div>
+      <CardHover products={products} />
+      
+      
+     
+      <CardNoHover products={products} />
+      </div>
+    
   );
 };
 

@@ -112,7 +112,7 @@ const CartModal = () => {
 
       </div>
       <div className="flex flex-col justify-between ">
-        <div className=" card  ">
+        <div className=" cart-scrool  ">
         {itensCarrinho &&
           itensCarrinho.map((cart) => (
             <CartItems
