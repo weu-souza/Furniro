@@ -28,4 +28,23 @@ select {
   @apply overflow-y-auto max-h-64 px-2 
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track{
+background: #d9d9d9;
+margin-block: .5em;
+border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #898989;
+  border-radius: 30px;
+
+}
+
 
