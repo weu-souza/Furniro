@@ -55,7 +55,7 @@ const Cart = () => {
       item.id === id ? { ...item, quantidade: item.quantidade + 1 } : item
     );
     setItensCarrinho(updatedItems);
-    localStorage.setItem("carrinho", JSON.stringify(updatedItems)); 
+    localStorage.setItem("carrinho", JSON.stringify(updatedItems));
     dispatch(Addqtd(updatedItems.length));
   };
 
@@ -66,7 +66,7 @@ const Cart = () => {
         : item
     );
     setItensCarrinho(updatedItems);
-    localStorage.setItem("carrinho", JSON.stringify(updatedItems)); 
+    localStorage.setItem("carrinho", JSON.stringify(updatedItems));
     dispatch(Addqtd(updatedItems.length));
   };
   const handleCheckout = () => {
@@ -76,36 +76,44 @@ const Cart = () => {
   return (
     <div className="flex flex-col max-w-screen-xl gap-14 mx-auto ">
       <Heading />
-      <div className="flex gap-14 ">
-        <div className=" max-w-[900px] ">
-          <div className="grid  grid-cols-4  w-full bg-cor-F9F1E7 py-6  px-32 ">
-            <h1 className="font-Poppins font-medium text-base text-black col-span-1">
-              Product
-            </h1>
-            <h1 className="font-Poppins font-medium text-base text-black col-span-1">
-              Price
-            </h1>
-            <h1 className="font-Poppins font-medium text-base text-black col-span-1">
-              Quantity
-            </h1>
-            <h1 className="font-Poppins font-medium text-base text-black col-span-1">
-              Subtotal
-            </h1>
-          </div>
-          {itensCarrinho &&
-            itensCarrinho.map((carrinho) => (
-              <CartComponent
-                key={carrinho.id}
-                cart={carrinho}
-                deleteCart={deleteCart}
-                quantidade={carrinho.quantidade}
-                onIncrease={handleIncrease}
-                onDecrease={handleDecrease}
-              />
-            ))}
-        </div>
-
-        <div>
+      <div className="flex flex-wrap gap-11 ">
+        <table className=" md:w-[800px]">
+          <thead className=" bg-cor-F9F1E7 h-20 ">
+            <tr>
+              <th className="font-Poppins font-medium text-base text-black">
+                
+              </th>
+              <th className="font-Poppins font-medium text-base text-black">
+                Product
+              </th>
+              <th className="font-Poppins font-medium text-base text-black">
+                Price
+              </th>
+              <th className="font-Poppins font-medium text-base text-black">
+                Quantity
+              </th>
+              <th className="font-Poppins font-medium text-base text-black">
+                Subtotal
+              </th>
+              <th className="font-Poppins font-medium text-base text-black">
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {itensCarrinho &&
+              itensCarrinho.map((carrinho) => (
+                <CartComponent
+                  key={carrinho.id}
+                  cart={carrinho}
+                  deleteCart={deleteCart}
+                  quantidade={carrinho.quantidade}
+                  onIncrease={handleIncrease}
+                  onDecrease={handleDecrease}
+                />
+              ))}
+          </tbody>
+        </table>
+        <div className="bg-black flex ">
           <CartTotals total={totalCart} handleCheckout={handleCheckout} />
         </div>
       </div>

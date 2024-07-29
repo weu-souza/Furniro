@@ -2,7 +2,6 @@ export const Compare = () => {
   return (
     <div>
       <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Compare.svg" alt="" />
-      
     </div>
   );
 };

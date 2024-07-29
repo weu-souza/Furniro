@@ -35,7 +35,7 @@ const CardHover = ({ products }: cardsType) => {
   };
 
   return (
-    <div className="relative flex-auto w-72 flex  bg-black bg-opacity-70 flex-col gap-4 p-2 rounded-md shadow-lg">
+    <div className="relative flex-auto w-72 flex bg-black bg-opacity-70 flex-col gap-4 p-2 rounded-md shadow-lg">
       <div className="absolute inset-0  opacity-30 rounded-md"></div>
       <div className="w-full relative z-10">
         <div className="absolute top-32 left-6 flex flex-col mx-auto z-20">
@@ -59,11 +59,11 @@ const CardHover = ({ products }: cardsType) => {
         </div>
         <img
           src={products.images.mainImage}
-          className="object-contain w-full opacity-10"
+          className="object-contain w-full opacity-50"
           alt={products.title}
         />
       </div>
-      <div className="flex flex-col gap-2 opacity-100 z-10">
+      <div className="flex flex-col gap-2 bg-opacity-95 z-10">
         <h3 className="font-Poppins font-semibold text-2xl text-cor-3A3A3A">
           {products.title}
         </h3>

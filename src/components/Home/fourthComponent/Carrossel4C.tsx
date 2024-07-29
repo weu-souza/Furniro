@@ -67,23 +67,29 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
           }
         })
       }
-      const hidePrevButton = () => {
+     
+
+    
+    
+    if (splideInstance) {
+      splideInstance?.on('mounted', () =>{
+        hidePrevButton();
+      });
+
+      splideInstance.on('mounted', () => {
+        adjustHeight();
+        
+      });
+      splideInstance.on('moved', adjustHeight);
+    }
+    };
+    const hidePrevButton = () => {
       const prevButton = document.querySelector('.splide__arrow--prev');
       if (prevButton) {
         (prevButton as HTMLElement).style.display = 'none';
       }
     };
-
-    hidePrevButton();    
-    splideInstance?.on('mounted', hidePrevButton);
-    if (splideInstance) {
-      splideInstance.on('mounted', () => {
-        adjustHeight();
-        hidePrevButton();
-      });
-      splideInstance.on('moved', adjustHeight);
-    }
-    };
+    hidePrevButton();   
     
 
     const splideInstance = splideRef.current?.splide;
@@ -93,7 +99,7 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
 
     return () => {
       splideInstance?.off('moved', adjustHeight);
-      splideInstance?.on('mounted', adjustHeight);
+      splideInstance?.off('mounted', hidePrevButton);
     };
   }, []);
 
@@ -103,7 +109,7 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
     drag:false,
     width: '800px',
     arrows: true,
-    pagination: true,
+    pagination: false,
     paginationKeyboard:true,
     gap: '20px',
     start:0,

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import MaiorQ from "../../../assets/icons/MaiorQ"
 const Heading = () => {
   const location = useLocation()
@@ -9,12 +9,11 @@ const Heading = () => {
       
     <div className="w-full h-full flex flex-col justify-center items-center gap-2">
       <div>
-      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-images/iconLogo.png" alt="logo" className="w-28 mx-auto" />
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-images/iconLogo.png" alt="logo" className="w-20 mx-auto" />
       <p className="font-Poppins font-medium text-5xl">{location.pathname.replace('/','')}</p>
       </div>
       <div className="flex items-center">
-        <h2 className="font-Poppins font-medium text-base text-black">Home</h2>
-        
+        <Link to={"/"} className="font-Poppins font-medium text-base text-black">Home</Link>
         <MaiorQ/>
         <h2 className="font-Poppins font-light text-base text-black">{location.pathname.replace('/','')}</h2>
       </div>

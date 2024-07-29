@@ -16,7 +16,7 @@ type cartType = {
 };
 const CartItems = ({ itensCarrinho, deleteCart }: cartType) => {
   return (
-    <div className=" flex flex-row pt-4 pl-9 gap-[30px] items-center">
+    <div className=" flex flex-row pt-4 pl-9 gap-[30px] items-center ">
       <img
         src={itensCarrinho.images.mainImage}
         alt="img"
@@ -31,10 +31,9 @@ const CartItems = ({ itensCarrinho, deleteCart }: cartType) => {
             className="font-Poppins font-medium text-xs text-black flex gap-[15px]
     "
           >
-            {" "}
             <span>{itensCarrinho.quantidade}</span> <span>x</span>{" "}
             <span className="text-cor-B88E2F">
-              rs. {itensCarrinho.normalPrice}
+              Rp. {itensCarrinho.normalPrice}
             </span>
           </p>
         </div>
@@ -100,7 +99,7 @@ const CartModal = () => {
   };
 
   return (
-    <div className="flex flex-col w-[417px] shadow-xl px-2 shadow-cor-shadow rounded-sm bg-white">
+    <div className="flex flex-col w-[417px] shadow-xl px-2 py-4 shadow-cor-shadow rounded-sm bg-white ">
       <div className="flex justify-between px-8 py-7">
         <h1 className="font-Poppins font-semibold text-2xl text-black">
           Shopping Cart
@@ -109,8 +108,11 @@ const CartModal = () => {
           <CloseCartModal />
         </button>
       </div>
-      <div className="border border-cor-D9D9D9 max-w-[287px] ml-8"></div>
-      <div className="flex flex-col justify-between">
+      <div className="border border-cor-D9D9D9 max-w-[287px] ml-8">
+
+      </div>
+      <div className="flex flex-col justify-between ">
+        <div className=" card  ">
         {itensCarrinho &&
           itensCarrinho.map((cart) => (
             <CartItems
@@ -119,13 +121,14 @@ const CartModal = () => {
               deleteCart={deleteCart}
             />
           ))}
-        <div className="px-8 ">
-          <div className="flex gap-[101px] pb-7">
+        </div>
+        <div className="px-8 pt-10 pb-3">
+          <div className="flex gap-[101px] ">
             <h1 className="font-Poppins font-normal text-base text-black ">
               subtotal
             </h1>
             <p className="font-Poppins font-semibold text-base text-cor-B88E2F">
-              rs. {totalCart}
+              Rp. {totalCart}
             </p>
           </div>
         </div>

@@ -9,6 +9,7 @@ import Products from "../pages/Products/Products";
 import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/checkout/Checkout";
 import ProtectedRoutes from "./ProtectedRoutes";
+import Register from "../pages/Register/Register";
 
 export const router = createBrowserRouter([
   {
@@ -51,5 +52,9 @@ export const router = createBrowserRouter([
   }, {
     path: "/login",
     element: <Login />,
+  }
+  , {
+    path: "/register",
+    element: <Register />,
   }
 ]);

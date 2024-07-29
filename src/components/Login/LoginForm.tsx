@@ -7,7 +7,7 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { auth } from "../../Service/firebase/firebaseConfig";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const LoginForm = () => {
@@ -73,12 +73,14 @@ const LoginForm = () => {
         {errors.password && (
           <span className="text-red-500">This field is required</span>
         )}
-        <div className="flex  items-center justify-between">
+        <div className="flex flex-col gap-4 justify-between">
+          <p className=" flex gap-2 font-Poppins font-normal text-base self-end">não tem uma conta? <Link to={"/register"} className="text-cor-9F9F9F"> Clique aqui </Link></p>
           <input
             type="submit"
             value={"Login"}
             className="py-3 px-20 bg-cor-B88E2F rounded-lg font-Poppins font-normal text-base text-white  cursor-pointer"
           />
+          <p className="mx-auto font-Poppins font-bold text-base ">Ou</p>
           <button
             type="button"
             className="bg-red-600 py-3 px-10  rounded-lg gap-2 font-Poppins font-normal text-base text-white"

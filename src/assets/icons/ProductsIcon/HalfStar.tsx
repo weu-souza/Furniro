@@ -2,7 +2,7 @@ const HalfStar = () => {
   return (
     <div>
       <img
-        src="https://us-east-2.console.aws.amazon.com/s3/object/imgs-furniro?region=us-east-2&bucketType=general&prefix=json-mages/project-icons/ProductsIcon/HalfStar.svg"
+        src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/ProductsIcon/HalfStar.svg"
         alt=""
       />
     </div>
