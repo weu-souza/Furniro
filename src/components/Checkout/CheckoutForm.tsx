@@ -19,7 +19,7 @@ export default function CheckoutForm({register, errors,setValue}:CheckouType) {
   const [firstName, lastName] = displayName!.split(' ');
   const email = user?.email;
  const [cep,setCep] = useState<string>("")
-const [isFetching, setIsFetching] = useState<boolean>(false);
+
 
 const addUserDataInForm = () =>{
  if(user){
@@ -37,7 +37,7 @@ useEffect(()=>{
 useEffect(() => {
   const buscaCep = async () => {
     if (cep.length === 8) {
-      setIsFetching(true);
+      
       try {
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         if (!response.ok) {
@@ -49,9 +49,7 @@ useEffect(() => {
         setValue('province', data.uf);
       } catch (error) {
         console.error(error);
-      } finally {
-        setIsFetching(false);
-      }
+      } 
     }
   };
   buscaCep();
