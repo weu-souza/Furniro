@@ -30,8 +30,8 @@ const Image = ({ product }: productType) => {
     setImage(src);
   };
   return (
-    <div className="flex gap-8">
-      <div className="flex flex-col gap-12 w-20 h-14">
+    <div className="flex flex-col md:flex-row  gap-8 mx-auto lg:mx-0 ">
+      <div className="flex flex-row md:flex-col gap-12 w-20 h-14">
         {product.images.gallery.map((img, index) => (
           <img
             onClick={handleclick}
@@ -42,12 +42,12 @@ const Image = ({ product }: productType) => {
           />
         ))}
       </div>
-      <div className=" ">
+      <div>
         {image && (
           <img
             src={image}
             alt="img principal"
-            className="object-cover w-full  h-[500px] rounded-lg"
+            className="object-cover w-[450px] md:w-full  md:h-[500px] rounded-lg"
           />
         )}
       </div>
@@ -75,6 +75,7 @@ const Rating = ({ rating }: ratingType) => {
     </div>
   );
 };
+
 type SizeType = {
   size: string;
   isActive: boolean;
@@ -116,8 +117,8 @@ const CardProd = ({ product }: productType) => {
   };
 
   return (
-    <div className="flex flex-col max-w-[606px] gap-10">
-      <h1 className="font-Poppins font-normal text-4xl text-black">
+    <div className="flex flex-col max-w-[606px] mx-auto gap-10 pl-10 lg:pl-0:">
+      <h1 className="font-Poppins font-normal text-4xl text-black ">
         {product.title}
       </h1>
       <p className="font-Poppins font-medium text-2xl text-cor-9F9F9F">
@@ -132,7 +133,7 @@ const CardProd = ({ product }: productType) => {
           5 Customer Review
         </p>
       </div>
-      <p className="font-Poppins font-normal text-sm text-black">
+      <p className=" font-Poppins font-normal text-sm text-black  md:w-[400px]  lg:w-[500px]">
         {product.description.long}
       </p>
 
@@ -166,8 +167,9 @@ const CardProd = ({ product }: productType) => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-5 ">
-        <div className="flex border border-cor-9F9F9F py-4 px-4 rounded-xl gap-6 items-center">
+      <div className="flex flex-col lg:flex-row gap-5  mx-auto ">
+
+        <div className="flex w-40  border border-cor-9F9F9F py-4 px-4 rounded-xl gap-6 items-center">
           <button
             onClick={() => {
               if (count > 0) {
@@ -188,6 +190,7 @@ const CardProd = ({ product }: productType) => {
             +
           </button>
         </div>
+
         <button
           onClick={handleAddToCart}
           className="border border-black py-5 px-10 rounded-xl font-Poppins font-normal text-xl text-black"
@@ -243,7 +246,7 @@ const CardProd = ({ product }: productType) => {
 };
 const Product = ({ product }: productType) => {
   return (
-    <div className="max-w-screen-xl flex justify-between">
+    <div className="max-w-screen-xl flex flex-wrap gap-10 md:gap-5">
       <Image product={product} />
       <CardProd product={product} />
     </div>

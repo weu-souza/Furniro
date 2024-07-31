@@ -61,11 +61,11 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
 
   return (   
-       <div className="flex flex-col gap-2">
-      <div className="flex gap-8">
+       <div className="flex flex-col gap-2 w-[350px] pl-5 lg:w-[600px] ">
+      <div className="flex flex-col md:flex-row gap-8 ">
         <label className="flex flex-col ">
           <span className="label">First Name</span>
-          <input {...register("firstName", { required: true })} className="input" />
+          <input  {...register("firstName", { required: true })} className="input" />
           {errors.firstName && <span className="text-red-500">This field is required</span>}
         </label>
 

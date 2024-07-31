@@ -76,22 +76,22 @@ const Cart = () => {
   return (
     <div className="flex flex-col max-w-screen-xl gap-14 mx-auto ">
     <Heading />
-    <div className="flex flex-wrap gap-14 ">
-      <div className=" max-w-[800px] ">
-        <div className="grid grid-cols-6  gap-20 w-full bg-cor-F9F1E7 py-6   ">
+    <div className="flex flex-wrap gap-14 pl-2">
+      <div className=" w-[350px] md:w-[600px] lg:w-[800px] ">
+        <div className="  grid grid-cols-6  gap-20 w-full bg-cor-F9F1E7 py-6   ">
           <h1 className="font-Poppins font-medium text-base text-black col-span-1 ">
             
           </h1>
-          <h1 className="font-Poppins font-medium text-base text-black col-span-1 ">
+          <h1 className=" hidden md:flex font-Poppins font-medium text-base text-black col-span-1 ">
             Product
           </h1>
-          <h1 className="font-Poppins font-medium text-base text-black col-span-1">
+          <h1 className="hidden md:flex font-Poppins font-medium text-base text-black col-span-1">
             Price
           </h1>
-          <h1 className="font-Poppins font-medium text-base text-black col-span-1">
+          <h1 className="hidden md:flex font-Poppins font-medium text-base text-black col-span-1">
             Quantity
           </h1>
-          <h1 className="font-Poppins font-medium text-base  text-black col-span-1">
+          <h1 className="hidden md:flex font-Poppins font-medium text-base  text-black col-span-1">
             Subtotal
           </h1>
           <h1 className="font-Poppins font-medium text-base text-end text-black col-span-1">

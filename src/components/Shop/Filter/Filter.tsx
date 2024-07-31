@@ -30,7 +30,7 @@ const handleChangeItens = (e: React.ChangeEvent<HTMLSelectElement>)=>{
   
 
   return (
-    <div className="bg-cor-F9F1E7 h-20 flex flex-wrap flex-col md:flex-row justify-around">
+    <div className="bg-cor-F9F1E7 md:h-20 flex py-2 gap-4 flex-col md:flex-row justify-around">
       <div className="flex gap-5 items-center justify-center my-auto">
         <FilterIcon />
         <p className="font-Poppins font-normal text-xl text-black">Filter</p>

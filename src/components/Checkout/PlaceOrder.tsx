@@ -36,7 +36,7 @@ const PlaceOrder = ({ register, checkout, total }: PlaceType) => {
          
         {checkout.map((items) => (
             <div key={items.id} className="flex gap-5 " >
-              <p className=" font-Poppins font-normal text-base text-cor-9F9F9F w-[300px]">
+              <p className=" font-Poppins font-normal text-base text-cor-9F9F9F md:w-[300px]">
                 {items.title}
               </p>
               <p className="mx-auto font-Poppins font-medium text-base text-black">
@@ -116,7 +116,7 @@ const PlaceOrder = ({ register, checkout, total }: PlaceType) => {
         </p>
         <button
           type="submit"
-          className="border border-black px-28 py-4 rounded-xl font-Poppins font-normal text-xl mx-auto text-black"
+          className="border border-black md:px-28 px-20  py-4 rounded-xl font-Poppins font-normal text-xl mx-auto text-black"
         >
           place order
         </button>

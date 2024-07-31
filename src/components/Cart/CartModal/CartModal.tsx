@@ -15,6 +15,7 @@ type cartType = {
   ) => void;
 };
 const CartItems = ({ itensCarrinho, deleteCart }: cartType) => {
+ 
   return (
     <div className=" flex flex-row pt-4 pl-9 gap-[30px] items-center ">
       <img
@@ -98,8 +99,10 @@ const CartModal = () => {
     navigate("/checkout");
   };
 
+  
+
   return (
-    <div className="flex flex-col w-[417px] shadow-xl px-2 py-4 shadow-cor-shadow rounded-sm bg-white ">
+    <div className="flex flex-col w-[390px] md:w-[417px] shadow-xl px-2 py-4 shadow-cor-shadow rounded-sm  bg-white ">
       <div className="flex justify-between px-8 py-7">
         <h1 className="font-Poppins font-semibold text-2xl text-black">
           Shopping Cart
@@ -113,14 +116,20 @@ const CartModal = () => {
       </div>
       <div className="flex flex-col justify-between ">
         <div className=" cart-scrool  ">
-        {itensCarrinho &&
+        {itensCarrinho.length > 0 ?
           itensCarrinho.map((cart) => (
             <CartItems
               key={cart.id}
               itensCarrinho={cart}
               deleteCart={deleteCart}
             />
-          ))}
+          )):( <div className="sem-tarefas">
+            <div>
+            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-images/NoItenCart.png" alt="cart vazio"/>
+            </div>
+          </div>)}
+
+
         </div>
         <div className="px-8 pt-10 pb-3">
           <div className="flex gap-[101px] ">

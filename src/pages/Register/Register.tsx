@@ -52,7 +52,7 @@ const RegisterForm = () =>{
         <div>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-8  w-[650px] shadow-2xl shadow-cor-shadow py-10 px-20 rounded-xl"
+            className="flex flex-col gap-8 w-[350px] md:w-[400px]  lg:w-[650px] shadow-2xl shadow-cor-shadow py-10 px-5 md:px-20 rounded-xl"
           >
             <label className="label flex flex-col gap-2">
               Email address

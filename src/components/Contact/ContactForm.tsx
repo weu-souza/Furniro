@@ -13,7 +13,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-9 w-full"
+      className="flex flex-col gap-9 w-full px-2"
     >
       <label className="label flex flex-col gap-2">
         Your name
