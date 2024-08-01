@@ -15,6 +15,7 @@ const Header = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   const [user] = useAuthState(auth);
+
   const OpenCart = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     setOpen(true);
@@ -26,6 +27,7 @@ const Header = () => {
   const handleLogout = async () => {
     await auth.signOut();
   };
+
   return (
     <header
       className=" flex flex-wrap md:justify-between py-7 max-w-screen-xl mx-auto items-center gap-3"
@@ -59,7 +61,7 @@ const Header = () => {
             <FontAwesomeIcon icon={faRightFromBracket} />
           </button>
         ) : (
-          <Link to={"/login"}>
+          <Link to={"/login"} aria-label="user">
             <User />
           </Link>
         )}
@@ -67,6 +69,7 @@ const Header = () => {
           <button
             className="relative py-3 px-5 rounded-full"
             onClick={(e) => OpenCart(e)}
+            aria-label="carticon"
           >
             <CartIcon />
             {storage > 0 && (
@@ -79,7 +82,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="absolute top-0 right-0">
+        <div className="absolute top-0 right-0" data-testId="cartModal">
           <CartModal />
         </div>
       )}

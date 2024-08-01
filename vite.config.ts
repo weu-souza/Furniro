@@ -2,8 +2,12 @@
 /// <reference types="vite/client" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// import dotevn from 'dotenv'
+import dotenv from 'dotenv'
+import path from 'path';
 // https://vitejs.dev/config/
+
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
 export default defineConfig({
   plugins: [react()],
   test:{
