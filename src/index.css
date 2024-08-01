@@ -48,6 +48,10 @@ border-radius: 100vw;
 }
 
 
+
+/* i creating this classes to make the hover effect in ProductsCard, because the father div is supose to be hover, not the childrens divs */
+
+/* dont remove this classes in ProductsCard */
 .card-father:hover .card-hover{
 @apply flex
 }
@@ -63,6 +67,21 @@ border-radius: 100vw;
 .card-father .card-no-hover{
   @apply flex
 }
+.card-father:hover .cardChildren{
+@apply bg-cor-3A3A3A 
+}
+.card-father .cardChildren{
+@apply bg-cor-F4F5F7 
+}
+
+.card-father:hover .card-bg-opacity{
+  @apply bg-opacity-50
+}
+.card-father:hover .card-opacity{
+  @apply opacity-50
+}
+
+
 
 
 
