@@ -3,6 +3,7 @@ import CiGridBigRound from "../../../assets/icons/shop/CiGridBigRound";
 import ViewList from "../../../assets/icons/shop/ViewList";
 import { useState } from "react";
 import { AddItem, useAppDispatchItems,AddCategory, useAppDispatchCategory } from "../../../Service/store/store";
+
 interface ItemListProps {
   currentPage: number;
   itemsPerPage: number;
@@ -30,7 +31,8 @@ const handleChangeItens = (e: React.ChangeEvent<HTMLSelectElement>)=>{
   
 
   return (
-    <div className="bg-cor-F9F1E7 md:h-20 flex py-2 gap-4 flex-col md:flex-row justify-around">
+    
+    <div data-testid="category-filter" className="bg-cor-F9F1E7 md:h-20 flex py-2 gap-4 flex-col md:flex-row justify-around">
       <div className="flex gap-5 items-center justify-center my-auto">
         <FilterIcon />
         <p className="font-Poppins font-normal text-xl text-black">Filter</p>
