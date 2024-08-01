@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import User from "../../../assets/icons/UserIcon";
-import CartIcon from "../../../assets/icons/CartIcon";
-import LogoIcon from "../../../assets/icons/logo_furniro";
+
 import CartModal from "../../Cart/CartModal/CartModal";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,7 +32,7 @@ const Header = () => {
       onClick={closeCart}
     >
       <div className="mx-auto md:mx-0 mb-4 md:mb-0">
-        <LogoIcon />
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/logo_furniro.svg" alt="" />
       </div>
       <div className="flex flex-wrap md:gap-20 gap-10 mx-auto ">
         <Link to={"/"} className="navigation">
@@ -62,7 +60,7 @@ const Header = () => {
           </button>
         ) : (
           <Link to={"/login"} aria-label="user">
-            <User />
+            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/UserIcon.svg" alt="" />
           </Link>
         )}
         <div>
@@ -71,7 +69,7 @@ const Header = () => {
             onClick={(e) => OpenCart(e)}
             aria-label="carticon"
           >
-            <CartIcon />
+            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/CartIcon.svg" alt="" />
             {storage > 0 && (
               <p className="absolute font-Poppins font-bold text-sm text-cor-D9D9D9 bg-cor-B88E2F  px-2 rounded-full top-0 right-0">
                 {storage}

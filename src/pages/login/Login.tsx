@@ -1,4 +1,4 @@
-import LogoIcon from "../../assets/icons/logo_furniro"
+
 import LoginForm from "../../components/Login/LoginForm"
 
 const Login = () => {
@@ -6,7 +6,7 @@ const Login = () => {
     <div className="flex flex-col gap-10 justify-between mt-32">
       <div className="flex flex-col gap-16 max-w-screen-xl mx-auto">
       <div className="mx-auto">
-      <LogoIcon />
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/logo_furniro.svg" alt="" />
       </div>
       <LoginForm/>
     </div>

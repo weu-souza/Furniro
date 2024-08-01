@@ -6,8 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import FullStar from "../../../assets/icons/ProductsIcon/FullStar";
-import HalfStar from "../../../assets/icons/ProductsIcon/HalfStar";
+
 import { ICarrinho } from "../../../Service/api/model/CartModel";
 import { AddCart } from "../../../Service/Cart/Cart";
 import { Addqtd, useAppDispatchCartQtd } from "../../../Service/store/store";
@@ -62,13 +61,16 @@ const Rating = ({ rating }: ratingType) => {
     <div className="flex items-center">
       {[...Array(fullStars)].map((_, index) => (
         <span key={index}>
-          <FullStar />
+         <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/ProductsIcon/FullStar.svg" alt="" />
         </span>
       ))}
       {hasHalfStar && (
         <span>
           <span>
-            <HalfStar />
+          <img
+        src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/ProductsIcon/HalfStar.svg"
+        alt=""
+      />
           </span>
         </span>
       )}

@@ -45,13 +45,13 @@ const CardItems = ({ products }: cardsType) => {
           </button>
           <div className="flex gap-2">
             <button className="flex items-center gap-1 font-Poppins font-semibold text-base text-white">
-              <Share /> {"Share"}
+            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Share.svg" alt="" /> {"Share"}
             </button>
             <button className="flex items-center gap-1 font-Poppins font-semibold text-base text-white">
-              <Compare /> {"Compare"}
+            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Compare.svg" alt="" /> {"Compare"}
             </button>
             <button className="flex items-center gap-1 font-Poppins font-semibold text-base text-white">
-              <Like /> {"Like"}
+            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Like.svg" alt="" /> {"Like"}
             </button>
           </div>
         </div>

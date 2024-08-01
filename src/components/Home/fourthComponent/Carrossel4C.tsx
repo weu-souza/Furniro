@@ -2,7 +2,7 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { IProducts } from "../../../Service/api/model/ProductsModel";
 import { useEffect, useRef } from "react";
-import Seta from "../../../assets/icons/carrosselicon/seta";
+
 type CarrosselType = {
   products:IProducts[]
 }
@@ -135,7 +135,8 @@ const ProductSlider: React.FC<CarrosselType> = ({ products }) => {
                 <p className="font-Poppins font-semibold text-3xl text-cor-3A3A3A">Inner Peace</p>
                 </div>
                 <div className="self-end">
-                  <button className="flex  items-center p-5 h-14 bg-cor-B88E2F "><Seta/></button>
+                  <button className="flex  items-center p-5 h-14 bg-cor-B88E2F "><div style={{backgroundImage:"url(https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/carrosselicon/seta.svg)"}} className=" bg-no-repeat w-8 h-8 bg-center">
+                  </div></button>
                 </div>
               </div>
               <img

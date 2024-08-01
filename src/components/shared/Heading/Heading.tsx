@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import MaiorQ from "../../../assets/icons/MaiorQ"
+
 const Heading = () => {
   const location = useLocation()
   return (
@@ -14,7 +14,7 @@ const Heading = () => {
       </div>
       <div className="flex items-center">
         <Link to={"/"} className="font-Poppins font-medium text-base text-black">Home</Link>
-        <MaiorQ/>
+        <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/MaiorQ.svg" alt="" />
         <h2 className="font-Poppins font-light text-base text-black">{location.pathname.replace('/','')}</h2>
       </div>
     </div>

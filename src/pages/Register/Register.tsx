@@ -4,7 +4,7 @@ import { IRegister } from "../../Service/api/model/LoginModel";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../../Service/firebase/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
-import LogoIcon from "../../assets/icons/logo_furniro"
+
 
 const RegisterForm = () =>{
     const navigate = useNavigate()
@@ -129,7 +129,7 @@ const Register = () => {
     <div className="flex flex-col gap-10 justify-between mt-10 pb-10">
       <div className="flex flex-col gap-16 max-w-screen-xl mx-auto">
       <div className="mx-auto">
-      <LogoIcon />
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/logo_furniro.svg" alt="" />
       </div>
       <RegisterForm />
     </div>

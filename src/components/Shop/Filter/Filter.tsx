@@ -1,6 +1,4 @@
-import FilterIcon from "../../../assets/icons/shop/FilterIcon";
-import CiGridBigRound from "../../../assets/icons/shop/CiGridBigRound";
-import ViewList from "../../../assets/icons/shop/ViewList";
+
 import { useState } from "react";
 import { AddItem, useAppDispatchItems,AddCategory, useAppDispatchCategory } from "../../../Service/store/store";
 
@@ -34,10 +32,10 @@ const handleChangeItens = (e: React.ChangeEvent<HTMLSelectElement>)=>{
     
     <div data-testid="category-filter" className="bg-cor-F9F1E7 md:h-20 flex py-2 gap-4 flex-col md:flex-row justify-around">
       <div className="flex gap-5 items-center justify-center my-auto">
-        <FilterIcon />
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/shop/FilterIcon.svg" alt="" />
         <p className="font-Poppins font-normal text-xl text-black">Filter</p>
-        <CiGridBigRound />
-        <ViewList />
+        <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/shop/CiGridBigRound.svg" alt="" />
+        <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/shop/ViewList.svg" alt="" />
         <p className="font-Poppins font-normal text-base text-black">
           Showing {displayedFrom}–{displayedTo} of {totalItems + 1} results
         </p>

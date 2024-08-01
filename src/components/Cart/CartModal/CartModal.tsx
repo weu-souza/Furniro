@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CloseCartModal from "../../../assets/icons/Cart/CloseCartModal";
+
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
@@ -108,7 +108,10 @@ const CartModal = () => {
           Shopping Cart
         </h1>
         <button>
-          <CloseCartModal />
+        <img
+        src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/Cart/CloseCartModal.svg"
+        alt=""
+      />
         </button>
       </div>
       <div className="border border-cor-D9D9D9 max-w-[287px] ml-8">
