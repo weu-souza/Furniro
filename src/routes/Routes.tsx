@@ -10,6 +10,7 @@ import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/checkout/Checkout";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Register from "../pages/Register/Register";
+import Loading from "../components/shared/Loading/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -39,8 +40,7 @@ export const router = createBrowserRouter([
       }
       ,{
         path:"cart",
-        element:<ProtectedRoutes  />,
-        children:[{path:"",element:<Cart />}]
+        element:<Cart />
       }
       ,{
         path:"checkout",
@@ -56,5 +56,9 @@ export const router = createBrowserRouter([
   , {
     path: "/register",
     element: <Register />,
+  }
+  , {
+    path: "/loading",
+    element: <Loading />,
   }
 ]);

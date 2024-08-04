@@ -13,7 +13,7 @@ import { useEffect } from "react";
 const LoginForm = () => {
   const [signInWithGoogle, userEmail] =
     useSignInWithGoogle(auth);
-  const [signInWithEmailAndPassword, userGoogle,] =
+  const [signInWithEmailAndPassword, userGoogle] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
   const {
@@ -36,8 +36,6 @@ const LoginForm = () => {
       navigate('/');
     }
   },[userGoogle,userEmail])
-
-
   return (
     <div>
       <form
