@@ -1,4 +1,4 @@
-//splide não tem tipo então fica dando esse erro mesmo, eu pesquisei e o criador diz que não e familiarizado com typescript.
+// @ts-expect-error: Ignoring TS error due to type definitions mismatch
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { IProducts } from "../../../Service/api/model/ProductsModel";
 import { useEffect, useRef } from "react";

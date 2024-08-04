@@ -14,7 +14,7 @@ type cartType = {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
 };
-const CartItems = ({ itensCarrinho, deleteCart }: cartType) => {
+export const CartItems = ({ itensCarrinho, deleteCart }: cartType) => {
  
   return (
     <div className=" flex flex-row pt-4 pl-9 gap-[30px] items-center ">
@@ -29,16 +29,16 @@ const CartItems = ({ itensCarrinho, deleteCart }: cartType) => {
             {itensCarrinho.title}
           </h1>
           <p
-            className="font-Poppins font-medium text-xs text-black flex gap-[15px]
-    "
+            className="font-Poppins font-medium text-xs text-black flex gap-[15px]"
           >
-            <span>{itensCarrinho.quantidade}</span> <span>x</span>{" "}
+            <span>{itensCarrinho.quantidade}</span> <span>x</span>
             <span className="text-cor-B88E2F">
               Rp. {itensCarrinho.normalPrice}
             </span>
           </p>
         </div>
         <button
+         aria-label="delete"
           onClick={(e) => deleteCart(itensCarrinho.id, e)}
           className="text-cor-9F9F9F "
         >
@@ -139,7 +139,7 @@ const CartModal = () => {
             <h1 className="font-Poppins font-normal text-base text-black ">
               subtotal
             </h1>
-            <p className="font-Poppins font-semibold text-base text-cor-B88E2F">
+            <p aria-label="total" className="font-Poppins font-semibold text-base text-cor-B88E2F">
               Rp. {totalCart}
             </p>
           </div>

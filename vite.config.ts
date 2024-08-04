@@ -12,7 +12,12 @@ export default defineConfig({
   plugins: [react()],
   test:{
     globals:true,
-    environment:"jsdom"
+    environment:"jsdom",
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
+    },
   },
   build:{chunkSizeWarningLimit:1600}
 })
