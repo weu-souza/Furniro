@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="flex  flex-col gap-12 max-w-screen-xl mx-auto">
       <Heading />
-      <h1 className="font-Poppins font-bold text-5xl text-center">Não tem nada aqui</h1>
+      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-images/no-tem-nada.jpg" alt="não tem nada" />
       <Footing />
     </div>
   )

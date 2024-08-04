@@ -49,7 +49,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <div className="flex flex-row mx-auto gap-5 items-center ">
+      <div className="flex flex-row mx-auto md:mx-0 gap-5 items-center ">
         {user ? (
           <button
             onClick={handleLogout}
