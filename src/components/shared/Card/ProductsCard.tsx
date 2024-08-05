@@ -83,7 +83,7 @@ const CardItems = ({ products }: cardsType) => {
         />
       </div>
       <div className="flex flex-col gap-2 px-2 pb-2 bg-cor-F4F5F7 card-opacity">
-        <h3 className="font-Poppins font-semibold text-2xl text-cor-3A3A3A">
+        <h3 aria-label="product-title" className="font-Poppins font-semibold text-2xl text-cor-3A3A3A">
           {products.title}
         </h3>
         <p className="font-Poppins font-medium text-base text-cor-898989">
@@ -112,12 +112,13 @@ const Cards = ({ products }: cardsType) => {
   };
 
   return (
-    <div
+    <button
+    aria-label="card-father"
       onClick={handleRedirect}
       className="card-father cursor-pointer"
     >
     <CardItems products={products} />
-      </div>
+      </button>
     
   );
 };
