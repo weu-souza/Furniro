@@ -1,7 +1,4 @@
 import { IProducts } from "../../../Service/api/model/ProductsModel";
-import {Compare} from "../../../assets/icons/cardIcons/Compare";
-import {Like} from "../../../assets/icons/cardIcons/Like";
-import Share from "../../../assets/icons/cardIcons/Share";
 import { useNavigate } from "react-router-dom";
 import { ICarrinho } from "../../../Service/api/model/CartModel";
 import { AddCart } from "../../../Service/Cart/Cart";

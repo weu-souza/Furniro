@@ -1,4 +1,4 @@
-import {logRoles, render, screen} from "@testing-library/react"
+import {render, screen} from "@testing-library/react"
 import '@testing-library/jest-dom'
 import ProductsCard from "../../src/components/shared/Card/ProductsCard"
 import { mockProdArr } from "../../src/Service/Mocks/Products"
@@ -13,7 +13,7 @@ import { store } from "../../src/Service/store/store"
 describe("ProductsCard",()=>{
     it("should be render 6 card and image have oi in scr", () =>{
        
-       const view =  render(
+        render(
        <BrowserRouter>
        <Provider store={store}>
         <ProductsCard products={mockProdArr}/>
