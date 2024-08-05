@@ -10,7 +10,7 @@ import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/checkout/Checkout";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Register from "../pages/Register/Register";
-import Loading from "../components/shared/Loading/Loading";
+import NotFound from "../components/shared/notFound/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
     element: <Register />,
   }
   , {
-    path: "/loading",
-    element: <Loading />,
+    path: "*",
+    element: <NotFound/>,
   }
 ]);
