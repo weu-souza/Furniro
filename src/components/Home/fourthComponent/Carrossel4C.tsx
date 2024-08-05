@@ -1,6 +1,6 @@
 // @ts-expect-error: Ignoring TS error due to type definitions mismatch
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import React, { useRef, useEffect } from 'react';
+import{ useRef, useEffect } from 'react';
 import '@splidejs/react-splide/css';
 import { IProducts } from '../../../Service/api/model/ProductsModel';
 

@@ -36,13 +36,13 @@ const PlaceOrder = ({ register, checkout, total }: PlaceType) => {
          
         {checkout.map((items) => (
             <div key={items.id} className="flex gap-5 " >
-              <p className=" font-Poppins font-normal text-base text-cor-9F9F9F md:w-[300px]">
+              <p aria-label='product-title' className=" font-Poppins font-normal text-base text-cor-9F9F9F md:w-[300px]">
                 {items.title}
               </p>
               <p className="mx-auto font-Poppins font-medium text-base text-black">
                   x {items.quantidade}
                 </p>
-                <p className="font-Poppins font-light text-base text-black pb-10">
+                <p aria-label='product-value' className="font-Poppins font-light text-base text-black pb-10">
               Rp. {(items.normalPrice * items.quantidade).toFixed(2)}
             </p>
             </div>
@@ -53,14 +53,14 @@ const PlaceOrder = ({ register, checkout, total }: PlaceType) => {
 
       <div className="font-Poppins font-normal text-base text-black  flex justify-between">
         <h1>Subtotal</h1>
-        <p className="font-Poppins font-light text-base text-black ">
+        <p aria-label='product-subTotal' className="font-Poppins font-light text-base text-black ">
           Rp. {total}
         </p>
       </div>
 
       <div className="font-Poppins font-normal text-base text-black flex justify-between">
         <h1>Total</h1>
-        <p className="font-Poppins font-bold text-2xl text-cor-B88E2F ">
+        <p aria-label='product-total' className="font-Poppins font-bold text-2xl text-cor-B88E2F ">
           Rp. {total}
         </p>
       </div>
