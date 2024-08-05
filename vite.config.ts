@@ -16,7 +16,8 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],
-      include: ['src/**/*.ts', 'src/**/*.tsx'],
+      include: [ 'src/**/*.tsx'],
+      exclude:['src/App.tsx', 'src/main.tsx']
     },
   },
   build:{chunkSizeWarningLimit:1600

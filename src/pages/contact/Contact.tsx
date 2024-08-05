@@ -9,7 +9,7 @@ const Contact = () => {
       <Heading />
       <div className="flex flex-col max-w-[1058px] mx-auto w-full gap-16">
         <h1 className="font-Poppins font-semibold text-4xl text-black text-center">Get In Touch With Us</h1>
-        <p className="font-Poppins font-normal text-base text-center text-cor-9F9F9F">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
+        <p className="font-Poppins font-normal text-base text-center text-cor-9F9F9F" aria-label="paragraph">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
         <div className="flex flex-col md:flex-row w-full justify-between gap-10">
           <div className="flex-auto">
             <ContactUs />
