@@ -5,9 +5,11 @@
   <img width="1000px" heigth="300px" src="./src/assets/toReadMe/Furniro-Google-Chrome-2024-07-28-21-26-28.gif">
 </p>
 
-furniro e um app que emula um ecomerce de vendas de imovel com carrinho, produtos é tela de compra.
+<a href="http://ec2-15-229-114-140.sa-east-1.compute.amazonaws.com/">Furniro</a> e um App feito para aprendizado das tecnologias react e tailwind um sistema de ecomerce que simula uma loja de vendas de moveis.
 
 ## Aviso
+
+- ` obs: `.env ta no github para facilitar a vida do instrutor, depois removo.
 
 A parte de login e feita pelo firebase, e eu não coloquei as minhas configurações no arquivo.
 
