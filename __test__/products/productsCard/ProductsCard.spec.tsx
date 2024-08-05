@@ -1,10 +1,10 @@
 import {render, screen} from "@testing-library/react"
 import '@testing-library/jest-dom'
-import ProductsCard from "../../src/components/shared/Card/ProductsCard"
-import { mockProdArr } from "../../src/Service/Mocks/Products"
+import ProductsCard from "../../../src/components/shared/Card/ProductsCard"
+import { mockProdArr } from "../../../src/Service/Mocks/Products"
 import { BrowserRouter } from "react-router-dom"
 import { Provider } from "react-redux"
-import { store } from "../../src/Service/store/store"
+import { store } from "../../../src/Service/store/store"
 
 
 
