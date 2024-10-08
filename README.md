@@ -1,5 +1,5 @@
 
-<img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/logo_furniro.svg"> 
+<img src="/src/assets/icons/logo_furniro.svg"> 
 
 <p align="center"> 
   <img width="1000px" heigth="300px" src="./src/assets/toReadMe/Furniro-Google-Chrome-2024-07-28-21-26-28.gif">

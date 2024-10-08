@@ -112,13 +112,13 @@ const Cards = ({ products }: cardsType) => {
   };
 
   return (
-    <button
+    <div
     aria-label="card-father"
       onClick={handleRedirect}
       className="card-father cursor-pointer"
     >
     <CardItems products={products} />
-      </button>
+      </div>
     
   );
 };

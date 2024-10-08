@@ -7,6 +7,9 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Service/firebase/firebaseConfig";
 import { useAppSelector } from "../../../Service/store/store";
+import User from "../../../assets/icons/UserIcon";
+import LogoIcon from "../../../assets/icons/LogoIcon";
+import CartIcon from "../../../assets/icons/CartIcon";
 
 const Header = () => {
   const storage = useAppSelector((state) => state.cartQtd.cartQtd);
@@ -32,7 +35,7 @@ const Header = () => {
       onClick={closeCart}
     >
       <div className="mx-auto md:mx-0 mb-4 md:mb-0">
-      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/logo_furniro.svg" alt="" />
+      <LogoIcon/>
       </div>
       <div className="flex flex-wrap md:gap-20 gap-10 mx-auto ">
         <Link to={"/"} className="navigation">
@@ -60,7 +63,7 @@ const Header = () => {
           </button>
         ) : (
           <Link to={"/login"} aria-label="user">
-            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/UserIcon.svg" alt="" />
+            <User/>
           </Link>
         )}
         <div>
@@ -69,7 +72,7 @@ const Header = () => {
             onClick={(e) => OpenCart(e)}
             aria-label="carticon"
           >
-            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/CartIcon.svg" alt="" />
+           <CartIcon/>
             {storage > 0 && (
               <p className="absolute font-Poppins font-bold text-sm text-cor-D9D9D9 bg-cor-B88E2F  px-2 rounded-full top-0 right-0">
                 {storage}
