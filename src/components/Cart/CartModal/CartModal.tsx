@@ -112,6 +112,7 @@ const CartModal = () => {
         src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/Cart/CloseCartModal.svg"
         alt=""
       />
+     
         </button>
       </div>
       <div className="border border-cor-D9D9D9 max-w-[287px] ml-8">
@@ -128,7 +129,7 @@ const CartModal = () => {
             />
           )):( <div className="sem-tarefas">
             <div>
-            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-images/NoItenCart.png" alt="cart vazio"/>
+            <img src="/src/assets/Img/NoItenCart.png" alt="cart vazio"/>
             </div>
           </div>)}
 

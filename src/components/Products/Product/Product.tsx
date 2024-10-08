@@ -10,6 +10,8 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { ICarrinho } from "../../../Service/api/model/CartModel";
 import { AddCart } from "../../../Service/Cart/Cart";
 import { Addqtd, useAppDispatchCartQtd } from "../../../Service/store/store";
+import HalfStar from "../../../assets/icons/ProductsIcon/HalfStar";
+import FullStar from "../../../assets/icons/ProductsIcon/FullStar";
 
 type productType = {
   product: IProducts;
@@ -61,16 +63,13 @@ const Rating = ({ rating }: ratingType) => {
     <div className="flex items-center">
       {[...Array(fullStars)].map((_, index) => (
         <span key={index}>
-         <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/ProductsIcon/FullStar.svg" alt="" />
+        <FullStar/>
         </span>
       ))}
       {hasHalfStar && (
         <span>
           <span>
-          <img
-        src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/ProductsIcon/HalfStar.svg"
-        alt=""
-      />
+          <HalfStar/>
           </span>
         </span>
       )}

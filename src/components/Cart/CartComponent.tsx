@@ -1,4 +1,5 @@
 
+import CartDell from "../../assets/icons/Cart/CartDell";
 import { ICarrinho } from "../../Service/api/model/CartModel";
 
 type cartType = {
@@ -56,7 +57,7 @@ const CartComponent = ({
         Rp. {(cart.normalPrice * cart.quantidade).toFixed(2)}
       </p>
       <button className="col-span-1" onClick={(e) => deleteCart(cart.id, e)}>
-      <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/Cart/CartDell.svg" alt="" />
+      <CartDell/>
       </button>
       </div>
     </div>

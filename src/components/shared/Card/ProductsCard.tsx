@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { ICarrinho } from "../../../Service/api/model/CartModel";
 import { AddCart } from "../../../Service/Cart/Cart";
 import { useAppDispatchCartQtd, Addqtd } from "../../../Service/store/store";
+import Share from "../../../assets/icons/cardIcons/Share";
+import Compare from "../../../assets/icons/cardIcons/Compare";
+import Like from "../../../assets/icons/cardIcons/Like";
 type productsCardType = {
   products: IProducts[];
 };
@@ -42,13 +45,13 @@ const CardItems = ({ products }: cardsType) => {
           </button>
           <div className="flex gap-2">
             <button className="flex items-center gap-1 font-Poppins font-semibold text-base text-white">
-            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Share.svg" alt="" /> {"Share"}
+            <Share/> {"Share"}
             </button>
             <button className="flex items-center gap-1 font-Poppins font-semibold text-base text-white">
-            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Compare.svg" alt="" /> {"Compare"}
+            <Compare/> {"Compare"}
             </button>
             <button className="flex items-center gap-1 font-Poppins font-semibold text-base text-white">
-            <img src="https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/cardIcons/Like.svg" alt="" /> {"Like"}
+            <Like/> {"Like"}
             </button>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import{ useRef, useEffect } from 'react';
 import '@splidejs/react-splide/css';
 import { IProducts } from '../../../Service/api/model/ProductsModel';
+import Seta from '../../../assets/icons/carrosselicon/seta';
 
 type CarrosselType = {
   products: IProducts[];
@@ -118,7 +119,7 @@ const ProductSlider = ({ products }:CarrosselType) => {
                 </div>
                 <div className="self-end">
                   <button className="flex items-center p-5 h-14 bg-cor-B88E2F">
-                    <div style={{ backgroundImage: 'url(https://imgs-furniro.s3.us-east-2.amazonaws.com/json-mages/project-icons/carrosselicon/seta.svg)' }} className="bg-no-repeat w-8 h-8 bg-center"></div>
+                    <Seta/>
                   </button>
                 </div>
               </div>
