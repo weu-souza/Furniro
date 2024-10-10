@@ -1,19 +1,16 @@
 
-<img src="/src/assets/icons/logo_furniro.svg"> 
+<img src="./src/assets/icons/logo_furniro.svg"> 
 
 <p align="center"> 
   <img width="1000px" heigth="300px" src="./src/assets/toReadMe/Furniro-Google-Chrome-2024-07-28-21-26-28.gif">
 </p>
 
-<a href="http://ec2-15-229-114-140.sa-east-1.compute.amazonaws.com/">Furniro</a> e um App feito para aprendizado das tecnologias react e tailwind um sistema de ecomerce que simula uma loja de vendas de moveis.
+Furniro e um App feito para aprendizado das tecnologias react e tailwind um sistema de ecomerce que simula uma loja de vendas de moveis.
 
 ## Aviso
-
-- ` obs: `.env ta no github para facilitar a vida do instrutor, depois removo.
-
 A parte de login e feita pelo firebase, e eu não coloquei as minhas configurações no arquivo.
 
-para acessar a aplicação você vai ter que criar uma conta no firebase e pegar a parte de configuração e colocar no example.env, as variaveis ja estão prontas para serem consumidas pelo arquivo de configuração, e são com o mesmo nome das config do firebase.
+para acessar a aplicação você vai ter que criar uma conta no firebase e pegar a parte de configuração e colocar no example.env, remova o example, as variaveis ja estão prontas para serem consumidas pelo arquivo de configuração, e são com o mesmo nome das config do firebase.
 
 # Ativar Login
 
